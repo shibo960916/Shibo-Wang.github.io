@@ -29,6 +29,8 @@ body {
 
 
 .publication-title {
+    max-width: 1600px;        /* 设置最大宽度 */
+    width: 100%;
 }
 
 .publication-banner {
@@ -81,6 +83,11 @@ body {
 .author-block {
   display: inline-block;
 }
+
+/* .author-block a {
+  color: #545454;
+  font-weight: bold;
+} */
 
 .publication-banner img {
 }
@@ -325,9 +332,18 @@ body {
   font-style: italic;
 }
 
+.prompt {
+  font-family: 'Cavolini';
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #222222;
+  text-align: center;
+  font-style: italic;
+}
+
 .style_ref {
   font-size: 22px;
-  color: #000000;
+  color: #222222;
   text-align: center;
   font-style: bold;
 }
@@ -336,6 +352,11 @@ body {
   color: hsl(204, 86%, 53%) !important;
 }
 
+
 .my_link a:hover {
    text-decoration: underline;
+}
+
+.content.has-text-justified {
+  font-size: 18px;
 }

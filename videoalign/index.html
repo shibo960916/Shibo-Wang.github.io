@@ -3,22 +3,24 @@
 
 <head>
   <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="StyleCrafter" />
-  <meta property="og:description" content="Creating your videos in any style!" />
+  <meta property="og:title" content="VideoAlign" />
+  <meta property="og:description" content="Improving Video Generation with Human Feedback" />
   <meta property="og:url" content="URL OF THE WEBSITE" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="pics/icon.png" />
+  <meta property="og:image" content="" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
 
-  <meta name="twitter:title" content="StyleCrafter">
-  <meta name="twitter:description" content="creating your videos in any style!">
+  <meta name="twitter:title" content="VideoAlign">
+  <meta name="twitter:description" content="Improving Video Generation with Human Feedback">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="pics/icon.png">
+  <meta name="twitter:image" content="">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
@@ -26,7 +28,7 @@
 
 
   <title>Improving Video Generation with Human Feedback</title>
-  <link rel="icon" type="image/x-icon" href="pics/icon.png">
+  <link rel="icon" type="image/x-icon" href="">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -52,13 +54,13 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Improving Video Generation with Human Feedback</h1>
+            <h1 class="title is-2 publication-title">Improving Video Generation with Human Feedback</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://github.com/GongyeLiu">Jie Liu</a><sup>1,3,5</sup><sup>*</sup>,</span>
+                <a href="https://scholar.google.com.sg/citations?user=c--XCzAAAAAJ&hl=en">Jie Liu</a><sup>1,3,5</sup><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="https://menghanxia.github.io/">Gongye Liu</a><sup>2,3</sup><sup>*</sup>,</span>
+                <a href="https://gongyeliu.github.io/">Gongye Liu</a><sup>2,3</sup><sup>*</sup>,</span>
               <span class="author-block">
                 <a href="#">Jiajun Liang</a><sup>3</sup><sup>†</sup>,
               </span>
@@ -136,38 +138,39 @@
                     <span class="icon"> 
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-
-                <!-- Supplementary PDF link -->
-                <span class="link-block">
-                  <a href="sm/supp.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Supplementary</span>
+                    <span>ArXiv</span>
                   </a>
                 </span>
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/GongyeLiu/StyleCrafter" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>VisionReward Code (WIP)</span>
                   </a>
                 </span>
                 <!-- Hugging Face Demo link with an image icon -->
                 <span class="link-block">
-                  <a href="https://huggingface.co/spaces/liuhuohuo/StyleCrafter" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <img src="static/images/hf.png" alt="Online Demo">
                     </span>
-                    <span>Online Demo</span>
+                    <span>VideoGen-RewardBench (WIP)</span>
                   </a>
                 </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>More Results(WIP)</span>
+                  </a>
+                </span> -->
+
               </div>
             </div>
           </div>
@@ -189,26 +192,6 @@
                 <img src="pics/overview.png" alt="" width="1000" />
               </td>
             </div>
-            <!-- <h2 class="subtitle has-text-justified">
-              <b>TL;DR:</b> 
-            </h2> -->
-            <!-- 左对齐 增加行间距-->
-            <h2 class="subtitle has-text-justified" style="line-height: 1.4;">
-              <br><br>
-              We introduce Cambrian-1, a family of multimodal LLMs (MLLMs) designed with a <strong>vision-<i>centric</i></strong> approach. 
-              While stronger language models can enhance multimodal capabilities, 
-              the design choices for vision components are often insufficiently explored and disconnected from visual representation learning research. 
-  
-              <br><br>
-              Cambrian-1 is structured around five key pillars, each offering important insights into the design space of MLLMs:
-              <ol class="text">
-                  <li><strong><a href="#visual_representations">&sect;Visual Representations</a></strong>: We explore various vision encoders and their combinations.</li>
-                  <li><strong><a href="#connector_design">&sect;Connector Design</a></strong>: We design a new dynamic and <i>spatially-aware</i> connector that integrates visual features from several models with LLMs while reducing the number of tokens.</li>
-                  <li><strong><a href="#instruction_data">&sect;Instruction Tuning Data</a></strong>: We curate high-quality visual instruction-tuning data from public sources, emphasizing the importance of distribution balancing.</li>
-                  <li><strong><a href="#sec:inst_tuning">&sect;Instruction Tuning Recipes</a></strong>: We discuss instruction tuning strategies and practices.</li>
-                  <li><strong><a href="#sec:benchmarking">&sect;Benchmarking</a></strong>: We examine existing MLLM benchmarks and introduce a new vision-centric benchmark "CV-Bench".</li>
-              </ol>
-            </h2>
           </div>
         </div>
       </div>
@@ -216,39 +199,59 @@
   </section>
   <!-- End teaser video -->
 
-
-  <!-- Human Preference Annotation -->
-  <section class="hero is-small is-light">
+  <section class="hero is-small  is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-">
+          <div class="content has-text-justified">
+            In this project, we develop a systematic pipeline that leverage human feedback to harnesses current challenges in video generation and refine the flow-based VDMs.
+
+            <br><br>
+            Our project is structured around four key components:
+            <ul class="text" style="line-height: 1.6;">
+                <li><strong><a href="#sec:human_preference_anno">I. Human Preference Annotation</a></strong>: We create a large-scale, human-labeled dataset comprising 182k video generation preference annotations from 12 latest video generation models, capturing multiple dimensions of quality.</li>
+                <li><strong><a href="#sec:reward_modeling">II. VideoReward</a></strong>: We propose and systematically study a multi-dimensional video reward model, investigating how annotaions and different design decisions influence its rewarding efficacy. </li>
+                <li><strong><a href="#sec:reward_eval">III. VideoGen-RewardBench</a></strong>: We extend VideoGen-Eval with human preference annotations to create VideoGen-RewardBench, a leaderboard for evaluating video reward models. It includes 26.5k annotated triplets from diverse prompts and videos generated by state-of-the-art video generation models.</li>
+                <li><strong><a href="#sec:video_align">IV. Video Alignment</a></strong>: We extend three alignment algorithms to flow-based VDMs, including two training-time strategies (Flow-DPO and Flow-RWR) and one inference-time technique (Flow-NRG).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Human Preference Annotation -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div id='sec:human_preference_anno' class="column is-">
             <h2 class="title is-2">Part I. Human Preference Annotation</h2>
             <div class="content has-text-justified">
               <td colspan="3">
                 <p>
-                  We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
-                  allowing for the generation of stylized videos based on both a text prompt and a style reference
-                  image.
-                  The overview diagram is illustrated as the following figure.
-                  In this framework, the textual description dictates the video content,
-                  while the style image governs the visual style, ensuring a disentangled control over the video
-                  generation process.
+                  We utilized 12 text-to-video models to generate a total of 108k videos from 16k unique prompts. This process ultimately resulted in 182k annotated triplets, each consisting of a prompt paired with two videos and corresponding preference annotations.
                 </p>
                 <p>
-                  Given the limited availability of stylized videos, we employ a two-stage training strategy.
-                  Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
-                  modulation.
-                  Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
-                  conducted to improve the temporal
-                  quality of the generated videos.
+                  Annotators are asked to perform pairwise assessments across three critical dimensions: Visual Quality (VQ), Motion Quality (MQ), and Text Alignment (TA). For each dimension, annotators are presented with a prompt and two generated videos, and asked to provide choices indicating their preference (A wins/Ties/B wins). 
+                </p>
+                <p>
+                  In addition to pairwise annotations, we also conduct pointwise annotations using a similar procedure, where annotators rate each video on a Likert scale from 1 to 5 for the same three dimensions (i.e., VQ, MQ, TA). This dual annotation setup enables us to explore the advantages and limitations of pairwise preferences versus pointwise scores as annotation strategies.
                 </p>
 
               </td>
             </div>
+            <p><br></p>
             <div class="columns is-centered has-text-justified">
               <td colspan="3">
-                <img src="pics/overview.png" alt="" width="700" />
+                <img src="pics/trainset_tab.png" alt="" width="700" />
+              </td>
+            </div>
+            <p><br></p>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <img src="pics/trainset_pic.png" alt="" width="700" />
               </td>
             </div>
             <p><br></p>
@@ -258,37 +261,38 @@
 
 
   <!-- Reward Modeling -->
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-">
-            <h2 class="title is-2">Part II. Reward Modeling</h2>
+          <div id='sec:reward_modeling' class="column is-">
+            <h2 class="title is-2">Part II. VideoReward</h2>
             <div class="content has-text-justified">
               <td colspan="3">
                 <p>
-                  We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
-                  allowing for the generation of stylized videos based on both a text prompt and a style reference
-                  image.
-                  The overview diagram is illustrated as the following figure.
-                  In this framework, the textual description dictates the video content,
-                  while the style image governs the visual style, ensuring a disentangled control over the video
-                  generation process.
+                  <strong>Score Regression v.s. Bradley-Terry.</strong> Given that our training dataset includes both pointwise scores and pairwise preferences, we investigate two types of reward models: Score Regression and Bradley-Terry. We find that the BT model consistently outperforming the regression model across various dataset sizes. While as the dataset size increases, the performance gap between the two models narrows.
                 </p>
+                <p></p>
+                <div class="columns is-centered has-text-justified">
+                  <td colspan="3">
+                    <img src="pics/BT_vs_reg.png" alt="" width="500" />
+                  </td>
+                </div>
+                <p></p>
                 <p>
-                  Given the limited availability of stylized videos, we employ a two-stage training strategy.
-                  Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
-                  modulation.
-                  Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
-                  conducted to improve the temporal
-                  quality of the generated videos.
+                  <strong>Ties matters.</strong> The importance of tie annotations is often overlooked in BT models. We find that the inclusion of tie annotations significantly improves the robustness of the reward model. We adopt Bradley-Terry model with ties(BTT) instead of the traditional BT model to capture the human preferences.
+                </p>
+                <p></p>
+                <div class="columns is-centered has-text-justified">
+                  <td colspan="3">
+                    <img src="pics/BT_vs_BTT_boxplot.png" alt="" width="500" />
+                  </td>
+                </div>
+                <p></p>
+                <p>
+                  <strong>Separation for Decoupling.</strong> We observe that a shared token for multi-dimensional rewarding tends to cause coupling between context-agnostic dimensions (e.g., VQ and MQ) and input context. We adopt separate tokens for each dimension to ensure an independent evaluation for context-agnostic dimensions.
                 </p>
 
-              </td>
-            </div>
-            <div class="columns is-centered has-text-justified">
-              <td colspan="3">
-                <img src="pics/overview.png" alt="" width="700" />
               </td>
             </div>
             <p><br></p>
@@ -298,37 +302,38 @@
 
 
   <!-- Reward Benchmark & Evaluation -->
-  <section class="hero is-small is-light">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-">
+          <div id='sec:reward_eval' class="column is-">
             <h2 class="title is-2">Part III. Reward Benchmark & Evaluation</h2>
             <div class="content has-text-justified">
               <td colspan="3">
                 <p>
-                  We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
-                  allowing for the generation of stylized videos based on both a text prompt and a style reference
-                  image.
-                  The overview diagram is illustrated as the following figure.
-                  In this framework, the textual description dictates the video content,
-                  while the style image governs the visual style, ensuring a disentangled control over the video
-                  generation process.
+                  <strong>VideoGen-RewardBench.</strong>  Current evaluation benchmarks for human annotations are limited in videos generated by pre-Sora-era T2V models. We manually construct 26.5k triplets and hire annotators to provide pairwise preference labels. Additionally, annotators are asked to assess the overall quality between the two videos, serving as a universal label for evaluating across various reward model despite their specific-dimensions.
                 </p>
                 <p>
-                  Given the limited availability of stylized videos, we employ a two-stage training strategy.
-                  Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
-                  modulation.
-                  Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
-                  conducted to improve the temporal
-                  quality of the generated videos.
+                  We visualize the model coverage across the training sets of different methods and the two evaluation benchmarks:
                 </p>
-
               </td>
             </div>
             <div class="columns is-centered has-text-justified">
               <td colspan="3">
-                <img src="pics/overview.png" alt="" width="700" />
+                <img src="pics/model_coverage.png" alt="" width="700" />
+              </td>
+            </div>
+            <p><br></p>
+            <div class="content has-text-justified">
+              <td colspan="3">
+                <p>
+                  <strong>Evaluations across reward models.</strong>  We employs two primary benchmarks for evaluation. (1) VideoGen-RewardBench, serving as a modern benchmark to evaluate the performance of reward models on latest T2V models. (2) VideoGen-Eval, serving as a complementary benchmark to evaluate the performance of reward models on pre-Sora-era T2V models. Two accuracy metrics are reported: ties-included accuracy and ties-excluded accuracy. Results among different reward models are compared.
+                </p>
+              </td>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <img src="pics/rm_evaluation.png" alt="" width="1000" />
               </td>
             </div>
             <p><br></p>
@@ -337,37 +342,130 @@
   <!--End Reward Benchmark & Evaluation -->
 
   <!-- Video Alignment -->
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-">
+          <div id='sec:video_align' class="column is-">
             <h2 class="title is-2">Part IV. Video Alignment</h2>
             <div class="content has-text-justified">
               <td colspan="3">
                 <p>
-                  We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
-                  allowing for the generation of stylized videos based on both a text prompt and a style reference
-                  image.
-                  The overview diagram is illustrated as the following figure.
-                  In this framework, the textual description dictates the video content,
-                  while the style image governs the visual style, ensuring a disentangled control over the video
-                  generation process.
+                  Starting from the joint goal of RLHF algorithms:
+                </p>
+                $$\max_{p_\theta}  \mathbb{E}_{\mathbf{y} \sim \mathcal{D}_c, \mathbf{x}_0 \sim p_\theta(\mathbf{x}_0 \mid \mathbf{y})} \left[ r(\mathbf{x}_0,\mathbf{y}) \right] \notag  - \beta \, \mathbb{D}_{\text{KL}} \left[ p_\theta(\mathbf{x}_0 \mid \mathbf{y}) \,\|\, p_{\text{ref}}(\mathbf{x}_0 \mid \mathbf{y}) \right]$$
+                <p>
+                  We generalize the three alignment algorithms to flow-based models. These include two training-time strategies (Flow-DPO and Flow-RWR) and one inference-time technique (Reward Guidance).
+                </p>
+                <p><br></p>
+                <p>
+                  <strong>Flow-DPO: </strong>
+                </p>
+                $$
+                \begin{align}
+                \mathcal{L}_\text{DPO}(\theta) = - \mathbb{E} \Bigg[ \log \sigma \Bigg(& -\frac{\beta_t}{2} \Big(\| \mathbf{v}^w - \mathbf{v}_\theta(\mathbf{x}_{t}^w, t)\|^2 - \|\mathbf{v}^w - \mathbf{v}_\text{ref}(\mathbf{x}_{t}^w, t)\|^2 \notag \\
+                    &\quad - \bigl(\|\mathbf{v}^l - \mathbf{v}_\theta(\mathbf{x}_{t}^l, t)\|^2 
+                    - \|\mathbf{v}^l - \mathbf{v}_\text{ref}(\mathbf{x}_{t}^l, t)\|^2 \bigr) \Big) \Bigg) \Bigg],
+                \end{align}
+                $$
+                <p>
+                  <strong>Flow-RWR: </strong>
+                </p>
+                $$
+                \begin{align}
+                \mathcal{L}_\text{RWR}(\theta) &= \mathbb{E} \bigl[\exp(r(\mathbf{x}_0, \mathbf{y}))\|\mathbf{v} - \mathbf{v}_\theta(\mathbf{x}_{t}, t, \mathbf{y})\|^2\bigr],
+                \end{align}
+                $$
+                <p>
+                  <strong>Reward Guidance: </strong>
+                </p>
+                $$
+                \tilde{\mathbf{v}}_t(\mathbf{x}_t \mid \mathbf{y}) 
+                = \mathbf{v}_t(\mathbf{x}_t \mid \mathbf{y}) 
+                - w \,\frac{t}{1 - t}\,\nabla r(\mathbf{x}_t, \mathbf{y}),
+                $$
+                <p><br></p>
+                <p>
+                  We make comparisons among the three alignment algorithms along with the baseline models and SFT. We find that Flow-DPO outperforms the other algorithms in our setting. An interesting observation is that Flow-DPO with a constant β outperforms the one with a timestep dependent β, while the latter is a direct derivation from the Diffusion-DPO algorithm. Timestep dependent β may cause uneven training across different timesteps, since T2V models utilize shared model weights for various noise levels.
                 </p>
                 <p>
-                  Given the limited availability of stylized videos, we employ a two-stage training strategy.
-                  Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
-                  modulation.
-                  Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
-                  conducted to improve the temporal
-                  quality of the generated videos.
+                  We showcase part of the results after alignment by Flow-DPO with a constant β:
                 </p>
 
-              </td>
-            </div>
-            <div class="columns is-centered has-text-justified">
-              <td colspan="3">
-                <img src="pics/overview.png" alt="" width="700" />
+                <!-- Video Grid -->
+                <!-- Video 00 -->
+                <div align="center" style="width: 100%;">
+                    <a href="videos/base/00.mp4"><video style="width: 49%;" src="videos/base/00.mp4" autoplay loop controls muted> ></video></a>
+                    <a href="videos/dpo/00.mp4"><video style="width: 49%;" src="videos/dpo/00.mp4" autoplay loop controls muted> ></video></a>
+                </div>
+                <div class="prompt">
+                  <p>
+                    A cowboy rides his horse across an open plain at sunset, with the camera capturing the warm colors of the sky and the soft light on the landscape.
+                  </p>
+                </div>
+              
+                <!-- Video 01 -->
+                <div align="center" style="width: 100%;">
+                    <a href="videos/base/01.mp4"><video style="width: 49%;" src="videos/base/01.mp4" autoplay loop controls muted> ></video></a>
+                    <a href="videos/dpo/01.mp4"><video style="width: 49%;" src="videos/dpo/01.mp4" autoplay loop controls muted> ></video></a>
+                </div>
+                <div class="prompt">
+                  <p>
+                    A pair of animated sneakers with eyes and a mouth and a talking basketball with a face playing a game of one-on-one on an urban basketball court. The sneakers are dribbling and making quick moves, while the basketball is bouncing and trying to score. The court is surrounded by graffiti-covered walls and cheering spectators
+                  </p>
+                </div>
+
+                <!-- Video 02 -->
+                <div align="center" style="width: 100%;">
+                  <a href="videos/base/02.mp4"><video style="width: 49%;" src="videos/base/02.mp4" autoplay loop controls muted> ></video></a>
+                  <a href="videos/dpo/02.mp4"><video style="width: 49%;" src="videos/dpo/02.mp4" autoplay loop controls muted> ></video></a>
+                </div>
+                <div class="prompt">
+                  <p>
+                    A mechanical knight with steam-powered joints standing guard at an ancient castle gate. Gears whir softly as its head turns to scan the surroundings, while steam occasionally escapes from its armor joints.
+                  </p>
+                </div>
+
+                <!-- Video 03 -->
+                <div align="center" style="width: 100%;">
+                  <a href="videos/base/03.mp4"><video style="width: 49%;" src="videos/base/03.mp4" autoplay loop controls muted> ></video></a>
+                  <a href="videos/dpo/03.mp4"><video style="width: 49%;" src="videos/dpo/03.mp4" autoplay loop controls muted> ></video></a>
+                </div>
+                <div class="prompt">
+                  <p>
+                    A wandering alchemist with potion-filled vials clinking on their belt, gathering herbs in an enchanted forest where mushrooms glow and flowers whisper secrets
+                  </p>
+                </div>
+
+                <!-- Video 04 -->
+                <div align="center" style="width: 100%;">
+                  <a href="videos/base/04.mp4"><video style="width: 49%;" src="videos/base/04.mp4" autoplay loop controls muted> ></video></a>
+                    <a href="videos/dpo/04.mp4"><video style="width: 49%;" src="videos/dpo/04.mp4" autoplay loop controls muted> ></video></a>
+                </div>
+                <div class="prompt">
+                  <p>
+                    The camera follows a person standing alone by the lake, gazing at the distant sunset, with their reflection mirrored on the water’s surface.
+                  </p>
+                </div>
+
+                <!-- Video 05 -->
+                <div align="center" style="width: 100%;">
+                  <a href="videos/base/05.mp4"><video style="width: 49%;" src="videos/base/05.mp4" autoplay loop controls muted> ></video></a>
+                  <a href="videos/dpo/05.mp4"><video style="width: 49%;" src="videos/dpo/05.mp4" autoplay loop controls muted> ></video></a>
+              </div>
+                <div class="prompt">
+                  <p>
+                    The camera remains still, a woman with long brown hair and wearing a pink nightgown walks towards the bed in the bedroom and lays on it, the background is a cozy bedroom, warm evening light.
+                  </p>
+                </div>
+
+
+
+
+
+                
+
+
               </td>
             </div>
             <p><br></p>
@@ -376,645 +474,6 @@
   <!--End Reward Benchmark & Evaluation -->
 
 
-  <!-- Video grid single ref -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column custom-width">
-            <h2 class="title is-2">Comparisons</h2>
-
-            <h2 class="title is-4"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Single Reference</h2>
-            <div class="content has-text-justified my_link">
-              <td colspan="3">
-                <p>
-                  We present the comparison results of our method with other single reference style-guided Text-to-Video methods, including:
-                  <ul>
-                    <li>VideoComposer<a href="#videocomposer">[1]</a></li>
-                    <li>VideoCrafter*(VideoCrafter<a href="#videocrafter">[2]</a> equipped with GPT-4v<a href="#gpt4v">[3]</a>)</li>
-                    <li>Gen2*(Gen2<a href="#gen2">[4]</a> equipped with GPT-4v<a href="#gpt4v">[3]</a>)</li>
-                  </ul>
-                </p>
-
-                <p> More comparison results can be found in Our <a href="sm/supp.html">Supplementary</a>. </p>
-
-                <p><br></p>
-              </td>
-              
-
-              <div id="results-carousel" class="carousel results-carousel" align="center">
-                <div class="item item-video1">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/oil_paint_2.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/oil_paint_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/1.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/1.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/1.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/1.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/1.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/1.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/1.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/1.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      </tr>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A chef preparing meals in kitchen."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video2">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/watercolor_1.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/watercolor_1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/5.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/5.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/5.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/5.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/5.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/5.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/5.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/5.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A bear catching fish in a river."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video3">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/digital_art_1.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/digital_art_1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/2.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/2.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/2.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/2.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/2.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/2.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/2.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/2.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A wolf walking stealthily through the forest."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video4">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/anime_1.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/anime_1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/3.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/3.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/3.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/3.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/3.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/3.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/3.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/3.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A field of sunflowers on a sunny day."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video5">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/anime_2.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/anime_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/4.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/4.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/4.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/4.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/4.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/4.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/4.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/4.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A rocketship heading towards the moon."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video6">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/ink_2.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/ink_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/6.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/6.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/6.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/6.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/6.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/6.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/6.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/6.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A knight riding a horse through a field"</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video7">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/ukiyoe.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/ukiyoe.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/7.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/7.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/7.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/7.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/7.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/7.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/7.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/7.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A river flowing gently under a bridge"</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video8">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">VideoCrafter*(<a href="#videocrafter">[2]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: center;">Gen2*(<a href="#gen2">[4]</a>)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/oil_paint_2.jpg"> <img style="height: 150px;" class="center"
-                              src="sm/assets/stylepic/oil_paint_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCom/8.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCom/8.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/vidCraf/8.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/vidCraf/8.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/gen2/8.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/gen2/8.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                        <td><a href="sm/assets/comp_single_ref/ours/8.mp4"><video style="height: 150px;"
-                              src="sm/assets/comp_single_ref/ours/8.mp4" autoplay loop controls muted />
-                            ></video></a></td>
-                      <tr>
-                        <th colspan="5">
-                          <p class="prompt_global_vid"> "A street performer playing the guitar"</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <p><br></p>
-
-            <h2 class="title is-4"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b>Multiple Reference</h2>
-            <div class="content has-text-justified my_link">
-              <td colspan="3">
-                <p>
-                  We present the comparison results of our method with AnimateDiff(<a href="#animatediff">[5]</a>) for multi-reference style-guided Text-to-Video methods.
-                </p>
-                <p> More comparison results can be found in Our <a href="sm/supp.html">Supplementary</a>. </p>
-                <p><br></p>
-              </td>
-
-              <div id="results-carousel" class="carousel results-carousel" align="center">
-                <div class="item item-video1">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/3.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/3.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/1.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/1.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/1.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/1.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/1.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/1.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-
-                      </tr>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A wooden sailboat docked in a harbor."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video2">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/4.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/4.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/2.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/2.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/2.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/2.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/2.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/2.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A student walking to school with backpack."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video3">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/1.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/3.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/3.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/3.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/3.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/3.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/3.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A street performer palying the guitar."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video4">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/1.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/4.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/4.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/4.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/4.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/4.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/4.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A wolf walking stealthily through the forest."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video5">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/3.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/3.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/5.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/5.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/5.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/5.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/5.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/5.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A student walkin to school with backpack."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video6">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/4.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/4.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/6.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/6.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/6.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/6.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/6.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/6.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A knight riding a horse through a field."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video7">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/2.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/7.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/7.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/7.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/7.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/7.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/7.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A chef preparing meals in kitchen."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video8">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: center;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: center;">AnimateDiff(<a href="#animatediff">[5]</a>) </th>
-                      <th style="font-size: 16px; text-align: center;">Ours(S-R)</th>
-                      <th style="font-size: 16px; text-align: center;">Ours(M-R)</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic_multi_ref/5.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic_multi_ref/5.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/comp_multi_ref/animtediff/8.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/animtediff/8.mp4" autoplay loop controls muted />
-                            ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_sr/8.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_sr/8.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/comp_multi_ref/ours_mr/8.mp4"><video style="height: 200px;"
-                              src="sm/assets/comp_multi_ref/ours_mr/8.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                      <tr>
-                        <th colspan="4">
-                          <p class="prompt_global_vid"> "A rocketship heading towards the moon."</p>
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <p><br></p>
-          </div>
-        </div>
-  </section>
-  <!-- End video grid single ref -->
-
-
-  <!-- Video grid Extension -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column custom-width">
-            <h2 class="title is-2"> Additional Extensions</h2>
-            <h2 class="title is-4"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Stylized Text-to-Image Generation</h2>
-            
-            <a href="videos/showcase/more_result_img.jpg"> <img class="center"
-              src="videos/showcase/more_result_img.jpg" alt=""></a>
-
-            <p><br></p>
-
-            <h2 class="title is-4"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Depth Control</h2>
-            <div class="content has-text-justified">
-              <div id="results-carousel" class="carousel results-carousel" align="center">
-                <div class="item item-video1">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: left;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: left;">Input Depth </th>
-                      <th style="font-size: 16px; text-align: left;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: left;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/anime_2.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic/anime_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/depth_control/depth/depth_1.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/depth/depth_1.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/depth_control/vidCom/1.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/vidCom/1.mp4" autoplay loop controls muted /> ></video></a></td>
-                        <td><a href="sm/assets/depth_control/ours/1.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/ours/1.mp4" autoplay loop controls muted /> ></video></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/digital_art_1.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic/digital_art_1.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/depth_control/depth/depth_1.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/depth/depth_1.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/depth_control/vidCom/2.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/vidCom/2.mp4" autoplay loop controls muted /> ></video></a></td>
-                        <td><a href="sm/assets/depth_control/ours/2.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/ours/2.mp4" autoplay loop controls muted /> ></video></a></td>
-                      </tr>
-                      <tr>
-                        <th colspan="4"><p class="prompt_global_vid">"A tiger walks in the forest."</p></th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="item item-video2">
-                  <table>
-                    <tbody>
-                      <th style="font-size: 16px; text-align: left;">Style Reference</th>
-                      <th style="font-size: 16px; text-align: left;">Input Depth </th>
-                      <th style="font-size: 16px; text-align: left;">VideoComposer(<a href="#videocomposer">[1]</a>)
-                      </th>
-                      <th style="font-size: 16px; text-align: left;">Ours</th>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/ink_2.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic/ink_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/depth_control/depth/depth_2.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/depth/depth_2.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/depth_control/vidCom/3.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/vidCom/3.mp4" autoplay loop controls muted /> ></video></a></td>
-                        <td><a href="sm/assets/depth_control/ours/3.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/ours/3.mp4" autoplay loop controls muted /> ></video></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="sm/assets/stylepic/oil_paint_2.jpg"> <img style="height: 200px;" class="center"
-                              src="sm/assets/stylepic/oil_paint_2.jpg" alt=""></a></td>
-                        <td><a href="sm/assets/depth_control/depth/depth_2.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/depth/depth_2.mp4" autoplay loop controls muted /> ></video></a>
-                        </td>
-                        <td><a href="sm/assets/depth_control/vidCom/4.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/vidCom/4.mp4" autoplay loop controls muted /> ></video></a></td>
-                        <td><a href="sm/assets/depth_control/ours/4.mp4"><video style="height: 200px;"
-                              src="sm/assets/depth_control/ours/4.mp4" autoplay loop controls muted /> ></video></a></td>
-                      </tr>
-                      <tr>
-                        <th colspan="4"><p class="prompt_global_vid">"A car turning around on a countryside road."</p></th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <p><br></p>
-          </div>
-        </div>
-  </section>
   <!-- End video grid multi ref -->
 
   <!--BibTex citation -->
@@ -1037,7 +496,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column custom-width">
             <!-- <h2 class="title is-2"></h2> -->
-            <div class="content has-text-justified">
+            <!-- <div class="content has-text-justified">
               <p>
                 <a name="ref-videocomposer" id="ref-videocomposer"></a>
                 [1] Xiang Wang, Hangjie Yuan, Shiwei Zhang, Dayou Chen, Jiuniu Wang,
@@ -1068,7 +527,7 @@
                 Animatediff: Animate your personalized text-to-image diffusion models without specific tuning.
                 arXiv preprint:2307.04725, 2023
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
