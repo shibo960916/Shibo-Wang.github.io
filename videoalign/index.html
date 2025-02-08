@@ -333,9 +333,7 @@
               </td>
             </div>
             <div class="columns is-centered has-text-justified">
-              <td colspan="3">
-                <img src="pics/model_coverage.png" alt="" width="700" />
-              </td>
+                <iframe src="pics/sankey.html"></iframe>
             </div>
             <p><br></p>
             <div class="content has-text-justified">
@@ -365,7 +363,7 @@
             <div class="content has-text-justified">
               <td colspan="3">
                 <p>
-                  Starting from the joint goal of RLHF algorithms:
+                  From a unified RL perspective:
                 </p>
                 $$\max_{p_\theta}  \mathbb{E}_{\mathbf{y} \sim \mathcal{D}_c, \mathbf{x}_0 \sim p_\theta(\mathbf{x}_0 \mid \mathbf{y})} \left[ r(\mathbf{x}_0,\mathbf{y}) \right] \notag  - \beta \, \mathbb{D}_{\text{KL}} \left[ p_\theta(\mathbf{x}_0 \mid \mathbf{y}) \,\|\, p_{\text{ref}}(\mathbf{x}_0 \mid \mathbf{y}) \right]$$
                 <p>

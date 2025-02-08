@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="width: 100%; margin: 0">
+  <div id="container" style="width: 100vw; height: 100vh;"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    
+option = {
+    grid: {
+        left: '30%',
+        right: '30%',
+        top: '0%',
+        bottom: '0%'
+    },
+    series: {
+        type: 'sankey',
+        layout: 'none',
+        emphasis: {
+            focus: 'adjacency'
+        },
+        left: 200.0,
+        top: 30.0,
+        right: 350.0,
+        bottom: 30.0,
+        data: [
+    {
+        "name": "LVDM",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Text2Video-Zero",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Gen2",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "ZeroScope",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "AnimateDiff",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "ModelScope",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Lavie",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Hotshot-XL",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "SVD",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Pika",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Vega",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "VideoCrafter2",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Pixverse v1",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "HiDream",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "OpenSora-1.0",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Dreamina",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "T2V-Turbo",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "OpenSora-1.2",
+        "itemStyle": {
+            "color": "#5D7F8A"
+        }
+    },
+    {
+        "name": "Gen3",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Luma 1.0",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Kling 1.0",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Qingying",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Vidu",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Pixverse v2",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "EasyAnimate-v4",
+        "itemStyle": {
+            "color": "#5D7F8A"
+        }
+    },
+    {
+        "name": "CogVideoX",
+        "itemStyle": {
+            "color": "#5D7F8A"
+        }
+    },
+    {
+        "name": "Kling 1.5",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Wanxiang",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Hailuo",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Luma 1.5",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "Different Datasets"
+    },
+    {
+        "name": "Pre-Sora-Era Models",
+        "itemStyle": {
+            "color": "#E68A4A"
+        }
+    },
+    {
+        "name": "Modern Open-Source Models",
+        "itemStyle": {
+            "color": "#5D7F8A"
+        }
+    },
+    {
+        "name": "Modern Close-Source Models",
+        "itemStyle": {
+            "color": "#C44E52"
+        }
+    },
+    {
+        "name": "VideoScore Training Set",
+        "itemStyle": {
+            "color": "#536F8C"
+        }
+    },
+    {
+        "name": "VisionReward Training Set",
+        "itemStyle": {
+            "color": "#B0C8A0"
+        }
+    },
+    {
+        "name": "Our Training Set",
+        "itemStyle": {
+            "color": "#A59BCC"
+        }
+    },
+    {
+        "name": "GenAI-Bench",
+        "itemStyle": {
+            "color": "#3E5A3A"
+        }
+    },
+    {
+        "name": "VideoGen-RewardBench",
+        "itemStyle": {
+            "color": "#3B5C77"
+        }
+    }
+],
+        links: [
+    {
+        "source": 0,
+        "target": 31,
+        "value": 0.084468665,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.084468665,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 1,
+        "target": 31,
+        "value": 0.125340599,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.125340599,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 2,
+        "target": 31,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 3,
+        "target": 31,
+        "value": 0.059945504,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.059945504,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 4,
+        "target": 31,
+        "value": 0.038147139,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.038147139,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 4,
+        "target": 31,
+        "value": 0.306246691,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.306246691,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 5,
+        "target": 31,
+        "value": 0.122615804,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.122615804,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 5,
+        "target": 31,
+        "value": 0.128904182,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.128904182,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 6,
+        "target": 31,
+        "value": 0.08719346,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.08719346,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 6,
+        "target": 31,
+        "value": 0.132874537,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.132874537,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 7,
+        "target": 31,
+        "value": 0.08719346,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.08719346,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 8,
+        "target": 31,
+        "value": 0.079142403,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.079142403,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 8,
+        "target": 31,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 8,
+        "target": 31,
+        "value": 0.027247956,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.027247956,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 9,
+        "target": 31,
+        "value": 0.125340599,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.125340599,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 9,
+        "target": 31,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 10,
+        "target": 31,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 11,
+        "target": 31,
+        "value": 0.133514986,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 34,
+        "value": 0.133514986,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 11,
+        "target": 31,
+        "value": 0.303030303,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 35,
+        "value": 0.303030303,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 11,
+        "target": 31,
+        "value": 0.139756485,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.139756485,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 12,
+        "target": 31,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.035684875,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 13,
+        "target": 31,
+        "value": 0.000823497,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 36,
+        "value": 0.000823497,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 14,
+        "target": 31,
+        "value": 0.303030303,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 35,
+        "value": 0.303030303,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 15,
+        "target": 33,
+        "value": 0.186659347,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.186659347,
+        "color": "#C44E52"
+    },
+    {
+        "source": 14,
+        "target": 31,
+        "value": 0.137638962,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.137638962,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 16,
+        "target": 31,
+        "value": 0.053467443,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 31,
+        "target": 37,
+        "value": 0.053467443,
+        "color": "#E68A4A"
+    },
+    {
+        "source": 17,
+        "target": 32,
+        "value": 0.011646374,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 37,
+        "value": 0.011646374,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 18,
+        "target": 33,
+        "value": 0.082709151,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.082709151,
+        "color": "#C44E52"
+    },
+    {
+        "source": 19,
+        "target": 33,
+        "value": 0.084175484,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.084175484,
+        "color": "#C44E52"
+    },
+    {
+        "source": 17,
+        "target": 32,
+        "value": 0.084968097,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 38,
+        "value": 0.084968097,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 20,
+        "target": 33,
+        "value": 0.084472714,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.084472714,
+        "color": "#C44E52"
+    },
+    {
+        "source": 18,
+        "target": 33,
+        "value": 0.150974472,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.150974472,
+        "color": "#C44E52"
+    },
+    {
+        "source": 19,
+        "target": 33,
+        "value": 0.156464452,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.156464452,
+        "color": "#C44E52"
+    },
+    {
+        "source": 20,
+        "target": 33,
+        "value": 0.090584683,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.090584683,
+        "color": "#C44E52"
+    },
+    {
+        "source": 21,
+        "target": 33,
+        "value": 0.084373638,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.084373638,
+        "color": "#C44E52"
+    },
+    {
+        "source": 22,
+        "target": 33,
+        "value": 0.084670868,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.084670868,
+        "color": "#C44E52"
+    },
+    {
+        "source": 23,
+        "target": 33,
+        "value": 0.159209443,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.159209443,
+        "color": "#C44E52"
+    },
+    {
+        "source": 24,
+        "target": 32,
+        "value": 0.084888836,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 38,
+        "value": 0.084888836,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 25,
+        "target": 32,
+        "value": 0.084730313,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 38,
+        "value": 0.084730313,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 25,
+        "target": 32,
+        "value": 0.010322922,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 37,
+        "value": 0.010322922,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 25,
+        "target": 32,
+        "value": 0.303030303,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 32,
+        "target": 35,
+        "value": 0.303030303,
+        "color": "#5D7F8A"
+    },
+    {
+        "source": 26,
+        "target": 33,
+        "value": 0.076859731,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 36,
+        "value": 0.076859731,
+        "color": "#C44E52"
+    },
+    {
+        "source": 27,
+        "target": 33,
+        "value": 0.078547933,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.078547933,
+        "color": "#C44E52"
+    },
+    {
+        "source": 28,
+        "target": 33,
+        "value": 0.08482939,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.08482939,
+        "color": "#C44E52"
+    },
+    {
+        "source": 29,
+        "target": 33,
+        "value": 0.083581025,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.083581025,
+        "color": "#C44E52"
+    },
+    {
+        "source": 26,
+        "target": 33,
+        "value": 0.07805255,
+        "color": "#C44E52"
+    },
+    {
+        "source": 33,
+        "target": 38,
+        "value": 0.07805255,
+        "color": "#C44E52"
+    }
+]
+,
+    lineStyle: {
+      color: 'source',
+      curveness: 0.5
+    },
+    itemStyle: {
+      color: '#1f77b4',
+      borderColor: '#1f77b4'
+    },
+    label: {
+      color: 'rgba(0,0,0,0.7)',
+      fontFamily: 'Arial',
+      fontSize: 13
+    }
+    }
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
