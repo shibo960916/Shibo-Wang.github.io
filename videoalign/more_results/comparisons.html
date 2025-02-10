@@ -1,0 +1,311 @@
+<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+<style>
+  @import url('https://fonts.cdnfonts.com/css/chalkduster');
+</style>
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Comparison:Improving Video Generation with Human Feedback</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <button style="position: fixed;right: 15px;top:  50%;height: 100px;width: 140px; font-size: 20px;" type="button"><a
+      href="#top">Back to top</a></button>
+  <div class="page-container">
+    <h1 align="center">Improving Video Generation with Human Feedback</h1>
+    <!-- <h1 align="center">Paper ID #</h1> -->
+    <h1 align="center">Comparisons between Baseline and Flow-DPO</h1>
+
+    <a href="#top"></a>
+
+    <!-- <p><br><span class="emph">We recommend watching all images in full screen. Click on the images for seeing them in full scale.</span></p> -->
+
+    <!------------------ Comparison Single Reference SECTION ------------------>
+
+    <hr>
+
+
+    <p align="left"  style="font-size: 24px;">On this page, we showcase all the cases presented in our paper to intuitively demonstrate the visual enhancements achieved by Flow-DPO.</p>
+    <!-- <p align="left"  style="font-size: 24px;">We recommend watching all comparisons in full screen. Click on the videos for seeing them in full scale.</p> -->
+
+
+    <table width="600" align="center">
+      <colgroup>
+        <col style="width: 48%;">
+        <col style="width: 48%;">
+      </colgroup>
+      <tbody>
+        <th style="font-size: 20px">Baseline</th>
+        <th style="font-size: 20px">Flow-DPO</th>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0000.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0000.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0000.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0000.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A cowboy rides his horse across an open plain at sunset, with the camera capturing the warm colors of the sky and the soft light on the landscape.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0001.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0001.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0001.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0001.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera remains still, a woman with long brown hair and wearing a pink nightgown walks towards the bed in the bedroom and lays on it, the background is a cozy bedroom, warm evening light.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0002.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0002.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0002.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0002.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A wandering alchemist with potion-filled vials clinking on their belt, gathering herbs in an enchanted forest where mushrooms glow and flowers whisper secrets.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0003.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0003.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0003.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0003.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A pair of animated sneakers with eyes and a mouth and a talking basketball with a face playing a game of one-on-one on an urban basketball court. The sneakers are dribbling and making quick moves, while the basketball is bouncing and trying to score. The court is surrounded by graffiti-covered walls and cheering spectators
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0004.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0004.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0004.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0004.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera follows a person standing alone by the lake, gazing at the distant sunset, with their reflection mirrored on the water’s surface.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0005.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0005.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0005.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0005.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A mechanical knight with steam-powered joints standing guard at an ancient castle gate. Gears whir softly as its head turns to scan the surroundings, while steam occasionally escapes from its armor joints.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0006.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0006.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0006.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0006.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A mysterious hooded figure with glowing runes floating beneath their cloak, meditating in an ancient stone circle as moonlight streams down. Magic wisps swirl around their floating form.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0007.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0007.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0007.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0007.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A wise old wizard with a crystal staff, his long beard braided with magical charms, reading ancient scrolls in a tower library filled with floating candles.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0008.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0008.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0008.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0008.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A crystal golem with ancient runes etched across its translucent body, tending to a hidden garden of glowing crystals deep within a mountain cavern. Rainbow light ripples through its form with each movement.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0009.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0009.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0009.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0009.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A mysterious plague doctor with clockwork enhancements peeking through their dark robes, mixing herbal remedies in a medieval apothecary shop as green smoke swirls from bubbling vials.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0010.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0010.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0010.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0010.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A fox and an owl stargazing together on a hilltop. The fox is lying on its back, pointing at the stars, while the owl is perched on a nearby branch, looking through a telescope. The night sky is clear, with countless stars twinkling.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0011.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0011.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0011.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0011.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A dolphin and a sea turtle exploring a coral reef. The dolphin is swimming gracefully, while the sea turtle is gliding slowly beside it. The coral reef is vibrant with colorful corals and various marine life.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0012.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0012.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0012.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0012.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"Close up shot, a boy stretches out his right hand and happily stroked the head of a Border Collie.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0013.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0013.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0013.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0013.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera remains still, a woman with shoulder-length blonde hair and wearing a blue blouse pours water out of a mug, the background is a modern kitchen, warm indoor lighting.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0014.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0014.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0014.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0014.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"Candle burns and melts as adjacent ice cube melts into water
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0015.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0015.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0015.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0015.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera remains still, a woman with shoulder-length blonde hair and wearing a blue blouse opens the door of the washing machine, the background is a laundry room, soft ambient lighting.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0016.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0016.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0016.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0016.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A colossal mech suit towers over a futuristic cityscape, its powerful weapons primed for battle as the camera captures the scale and intensity of the scene.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0017.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0017.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0017.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0017.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera remains still, a woman with long black hair and wearing a green sweater enjoys music with headphones, her head swaying, the background is a cozy living room, warm ambient lighting.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0018.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0018.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0018.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0018.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A vibrant, enchanted forest filled with towering, glowing mushrooms, sparkling waterfalls, and magical creatures that flit through the trees. The camera glides through the forest, capturing the rich detail of the environment, from the dappled sunlight filtering through the leaves to the small, hidden creatures peeking out from behind the foliage. The animation emphasizes the lush, otherworldly beauty of the setting, with the environment almost feeling alive.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0019.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0019.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0019.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0019.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"In a fog-shrouded, Victorian-era town, a detective clad in a long trench coat and fedora investigates a series of mysterious disappearances. The camera follows the detective as he moves through dark, narrow alleyways, pausing occasionally to examine clues under the light of a gas lamp. The animation focuses on building a tense, eerie atmosphere, with the detective’s sharp movements contrasting with the slow, creeping fog.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0020.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0020.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0020.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0020.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"In a vibrant, Pixar-style fantasy world, a small, quirky robot with large expressive eyes navigates through a colorful, futuristic city. The camera follows the robot from a low angle, emphasizing its determined movements as it dodges flying cars and interacts with floating holographic advertisements. The animation features smooth transitions, exaggerated expressions, and a heartwarming moment where the robot finds a lost toy, showcasing its empathy.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0021.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0021.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0021.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0021.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"A robot equipped with LIDAR and cameras navigates through a cluttered warehouse, avoiding obstacles and dynamically adjusting its path. The camera alternates between a third-person view of the robot moving through the environment and a first-person view from the robot’s perspective, showing how it perceives and responds to its surroundings.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0022.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0022.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0022.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0022.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"In an operating room, a robotic arm performs a delicate surgery on a patient. The camera captures the intricate movements of the robotic arm’s tools as they carefully navigate around sensitive tissue. The shot alternates between the robotic arm’s precise actions and the surgical team&#x27;s monitoring screens, providing a comprehensive view of the procedure.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0023.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0023.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0023.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0023.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera captures a asian man in a workplace reacting to unfair treatment, showcasing the subtle expressions of frustration and injustice.
+"</th>
+            </tr>
+        
+            <tr>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0024.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/baseline/0024.mp4" autoplay loop controls muted></video></a></td>
+              <td><a href="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0024.mp4"><video height="300" src="https://huggingface.co/datasets/liuhuohuo/paper-showcases/resolve/main/videoalign/dpo/0024.mp4" autoplay loop controls muted></video></a></td>
+            </tr>
+        
+            <tr>
+              <th class="prompt" colspan="2" style="font-size: 16px;">"The camera captures a grandfather teaching his grandchild how to use an ancient loom, with sunlight streaming through the window, illuminating the threads."</th>
+            </tr>
+        
+      </tbody>
+    </table>
+
+    <!------------------ END SECTION ------------------>
+
+
+    <p><br>
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+
+</body>
+
+</html>
