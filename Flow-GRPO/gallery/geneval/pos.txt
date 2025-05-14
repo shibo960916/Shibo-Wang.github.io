@@ -1,0 +1,36 @@
+ours_4436-kl/a photo of a cow left of a stop sign_000001.png
+ours_4436-kl/a photo of a cow left of a stop sign_000002.png
+sd3.5-m/a photo of a cow left of a stop sign_000001.png
+sd3.5-m/a photo of a cow left of a stop sign_000002.png
+ours_4436-kl/a photo of a tie above a sink_000002.png
+ours_4436-kl/a photo of a tie above a sink_000003.png
+sd3.5-m/a photo of a tie above a sink_000002.png
+sd3.5-m/a photo of a tie above a sink_000003.png
+ours_4436-kl/a photo of a dog right of a teddy bear_000002.png
+ours_4436-kl/a photo of a dog right of a teddy bear_000003.png
+sd3.5-m/a photo of a dog right of a teddy bear_000002.png
+sd3.5-m/a photo of a dog right of a teddy bear_000003.png
+ours_4436-kl/a photo of a cell phone left of a tennis racket_000002.png
+ours_4436-kl/a photo of a cell phone left of a tennis racket_000003.png
+sd3.5-m/a photo of a cell phone left of a tennis racket_000002.png
+sd3.5-m/a photo of a cell phone left of a tennis racket_000003.png
+ours_4436-kl/a photo of a laptop left of a cow_000001.png
+ours_4436-kl/a photo of a laptop left of a cow_000003.png
+sd3.5-m/a photo of a laptop left of a cow_000001.png
+sd3.5-m/a photo of a laptop left of a cow_000003.png
+ours_4436-kl/a photo of a bench left of a bear_000000.png
+ours_4436-kl/a photo of a bench left of a bear_000002.png
+sd3.5-m/a photo of a bench left of a bear_000000.png
+sd3.5-m/a photo of a bench left of a bear_000002.png
+ours_4436-kl/a photo of a hot dog left of a suitcase_000001.png
+ours_4436-kl/a photo of a hot dog left of a suitcase_000002.png
+sd3.5-m/a photo of a hot dog left of a suitcase_000001.png
+sd3.5-m/a photo of a hot dog left of a suitcase_000002.png
+ours_4436-kl/a photo of a pizza right of a banana_000001.png
+ours_4436-kl/a photo of a pizza right of a banana_000003.png
+sd3.5-m/a photo of a pizza right of a banana_000001.png
+sd3.5-m/a photo of a pizza right of a banana_000003.png
+ours_4436-kl/a photo of a zebra left of an elephant_000001.png
+ours_4436-kl/a photo of a zebra left of an elephant_000003.png
+sd3.5-m/a photo of a zebra left of an elephant_000001.png
+sd3.5-m/a photo of a zebra left of an elephant_000003.png

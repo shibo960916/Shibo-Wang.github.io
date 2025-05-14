@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Flow-GRPO Project Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* ----------  GLOBAL THEME  ---------- */
+:root{
+  --bg:        #000;
+  --card-bg:   #161616;
+  --text:      #eee;
+  --muted:     #bbb;
+  --accent:    #6dc36d;
+  --radius:    10px;
+  --shadow:    0 4px 12px rgba(0,0,0,.45);
+  --maxw:      1500px;
+  font-family: 'Inter','Helvetica Neue',Arial,sans-serif;
+}
+html,body{margin:0;background:var(--bg);color:var(--text);}
+
+/* ----------  LAYOUT HELPERS  ---------- */
+.wrapper{max-width:var(--maxw);margin:0 auto;padding:48px 32px;}
+h1{font-size:40px;font-weight:800;text-align:center;margin:0 0 18px;}
+h1 .accent{color:var(--accent);}
+.subtitle{font-size:17px;font-weight:500;text-align:center;line-height:1.5;margin-bottom:32px;}
+.affil{font-size:14px;text-align:center;color:var(--muted);margin:-12px 0 26px;}
+.cta-bar{display:flex;justify-content:center;gap:40px;margin-bottom:60px;}
+.cta{display:flex;flex-direction:column;align-items:center;text-decoration:none;
+     color:var(--text);transition:transform .2s;}
+.cta:hover{transform:translateY(-3px);}
+.cta svg{width:46px;height:46px;fill:var(--accent);margin-bottom:6px;}
+
+section{margin-bottom:78px;}
+.section-head{font-size:36px;font-weight:700;margin:0 0 26px;text-align:center;}
+.grid{
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  display:flex;            /* change from grid to flex           */
+  flex-wrap:wrap;
+  gap:26px;
+  justify-content:center;  /* <-- horizontally centre the row     */
+}
+
+/* ----------  CARD  ---------- */
+.card{background:var(--card-bg);border-radius:var(--radius);display:block;
+      flex:0 0 340px;
+      text-decoration:none;color:var(--text);box-shadow:var(--shadow);overflow:hidden;
+      transition:transform .25s,box-shadow .25s;
+      border:2.5px solid rgba(255,255,255,.20);}
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,.65);border-color:var(--accent); }
+.card img{width:100%;display:block;height:180px;object-fit:cover;}
+.card-title{padding:12px 16px;font-size:22px;font-weight:600;text-align:center;}
+
+/* ----------  NEWS  ---------- */
+.news-row{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start;}
+.news-row time{font-feature-settings:"tnum";font-variant-numeric:tabular-nums;
+               color:var(--accent);flex:0 0 auto;}
+.news-row span{color:var(--muted);}
+
+/* ----------  DOWNLOAD LIST  ---------- */
+.dl-wrap{display:flex;justify-content:center;}
+.dl-list{list-style:none;padding:0;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+.dl-link{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--card-bg);padding:14px 20px;border-radius:var(--radius);
+  text-decoration:none;color:var(--text);font-weight:600;box-shadow:var(--shadow);
+  transition:transform .2s,box-shadow .2s;
+}
+.dl-link:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.55);}
+.dl-link i{font-size:20px;color:var(--accent);}
+
+
+/* footer padding */ .space-bot{height:60px;}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- ============  HERO AREA  ============ -->
+  <h1><span class="accent">Flow-GRPO</span>: Training Flow Matching Models via Online RL</h1>
+  <h1><span class="accent">Visualization Results</span></h1>
+
+  <!-- <div class="subtitle">
+    Gongye Liu<sup>1</sup>, Xin Yang<sup>1</sup>, &nbsp;Yiming Zhang<sup>2</sup> &nbsp;·&nbsp;
+    <span style="font-size:14px;color:var(--muted);">
+      <sup>1</sup>Tsinghua University   <sup>2</sup>Purdue University
+    </span>
+  </div> -->
+
+  <div class="cta-bar">
+    <a class="cta" href="https://arxiv.org/pdf/2505.05470" target="_blank">
+      <span class="fas fa-file-alt fa-2x"></span>
+      <span>Paper</span>
+    </a>
+    <a class="cta" href="https://github.com/yifan123/flow_grpo" target="_blank">
+      <span class="fab fa-github fa-2x"></span>
+      <span>Code</span>
+    </a>
+    <a class="cta" href="https://huggingface.co/jieliu/SD3.5M-FlowGRPO-GenEval" target="_blank">
+      <span class="fas fa-robot fa-2x"></span>
+      <span>Model</span>
+    </a>
+  </div>
+
+  <!-- ============  GALLERIES  ============ -->
+  <section id="galleries">
+    <h2 class="section-head">Gallery</h2>
+    <div class="grid">
+      <a class="card" href="gallery/gallery_geneval.html">
+        <img src=".assets/screenshot_geneval.png" alt="GenEval showcase">
+        <div class="card-title">GenEval Gallery</div>
+      </a>
+      <a class="card" href="gallery/gallery_ocr.html">
+        <img src=".assets/screenshot_ocr.png" alt="OCR showcase">
+        <div class="card-title">OCR Gallery</div>
+      </a>
+      <a class="card" href="gallery/gallery_pickscore.html">
+        <img src=".assets/screenshot_pickscore.png" alt="PickScore showcase">
+        <div class="card-title">PickScore Gallery</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============  TRAINING PROCESS  ============ -->
+  <section id="process">
+    <h2 class="section-head">Training Process</h2>
+    <div class="grid">
+      <a class="card" href="gallery_geneval_process.html">
+        <img src=".assets/screenshot_geneval_process.png" alt="GenEval training evolution">
+        <div class="card-title">GenEval Train Process</div>
+      </a>
+      <a class="card" href="gallery_ocr_process.html">
+        <img src=".assets/screenshot_ocr_process.png" alt="OCR training evolution">
+        <div class="card-title">OCR Train Process</div>
+      </a>
+      <a class="card" href="gallery_pickscore_process.html">
+        <img src=".assets/screenshot_pickscore_process.png" alt="PickScore training evolution">
+        <div class="card-title">PickScore Train Process</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============  RESOURCES  ============ -->
+  <section id="resources">
+    <h2 class="section-head" justify-content="center">Download All Reuslts</h2>
+    <div class="dl-wrap">
+    <ul class="dl-list">
+      <li><a class="dl-link" href="https://drive.google.com/xyz1" target="_blank">
+            <i class="fas fa-download"></i>  GenEval Results (5 samples) (3 GB)
+          </a></li>
+      <li><a class="dl-link" href="https://drive.google.com/xyz2" target="_blank">
+            <i class="fas fa-download"></i>  OCR Results (5 samples) (2 GB)
+          </a></li>
+      <li><a class="dl-link" href="https://drive.google.com/xyz3" target="_blank">
+            <i class="fas fa-download"></i>  PickScore Results (5 samples) (2 GB)
+          </a></li>
+    </ul></div>
+    
+  </section>
+
+  <!-- ============  NEWS  ============ -->
+  <!-- <section id="news">
+    <h2 class="section-head">News</h2>
+    <div class="news-row">
+      <time>[May 2025]</time> <span>Project hub released.</span>
+    </div>
+    <div class="news-row">
+      <time>[Apr 2025]</time> <span>Paper submitted to CVPR 2025.</span>
+    </div>
+  </section> -->
+
+  <div class="space-bot"></div>
+</div>
+</body>
+</html>

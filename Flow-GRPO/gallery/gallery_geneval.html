@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>Multi-group Comparison on GenEval</title>
+<style>
+ body{background:#000;color:#eee;font-family:Arial,Helvetica,sans-serif;margin:0;padding:40px;}
+ h1{font-size:30px;margin:40px 0 20px;text-align:center;}
+ /* pill tabs */
+ .tabbar{font-size:20px;display:flex;gap:40px;justify-content:center;margin-top:100px;margin-bottom:50px;flex-wrap:wrap;}
+ .tab{padding:12px 22px;border-radius:12px;background:#fff;color:#000;font-weight:600;
+      cursor:pointer;user-select:none;transition:background .25s;}
+ .tab.active{background:#9fffd6;}
+ /* galleries */
+ .gallery{display:none;}
+ .gallery.active{display:block;}
+ table.gallery-table{width:100%;border-collapse:separate;border-spacing:0 30px;}
+ th{font-size:28px;padding:8px 6px;}
+ td{text-align:center;vertical-align:top;}
+ img.pair{
+  height:180px;          /*  adjust once, works everywhere   */
+  width:auto;            /*  keeps aspect ratio              */
+  max-width:100%;        /*  prevents stretching on phones   */
+  margin:0 6px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:opacity .3s;
+}
+
+ img.pair:hover{opacity:.8;}
+ .prompt{font-size:20px;color:#bbb;padding-top:3px;}
+ /* back-to-top */
+ .topbtn{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;
+         background:#4caf50;color:#fff;display:flex;align-items:center;justify-content:center;
+         font-size:24px;cursor:pointer;box-shadow:0 0 12px rgba(0,0,0,.6);}
+</style>
+</head><body>
+
+<div class="tabbar">
+  <div class="tab active" data-target="g0">Two Objects</div>
+  <div class="tab " data-target="g1">Attribute Binding</div>
+  <div class="tab " data-target="g2">Position</div>
+  <div class="tab " data-target="g3">Counting</div>
+</div>
+<h1>Comparisons</h1>
+<div id="g0" class="gallery active">
+<table class="gallery-table">
+<thead><tr><th>SD-3.5-m</th><th>Flow-GRPO</th><th>Flow-GRPO (w/o KL)</th></tr></thead>
+<tbody>
+  <tr>
+    <td><a href="geneval/two_obj/base/000_0.png" target="_blank"><img src="geneval/two_obj/base/000_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/000_1.png" target="_blank"><img src="geneval/two_obj/base/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/000_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/000_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/000_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/000_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a tennis racket and a bicycle</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/001_0.png" target="_blank"><img src="geneval/two_obj/base/001_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/001_1.png" target="_blank"><img src="geneval/two_obj/base/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/001_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/001_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/001_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/001_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a carrot and a couch</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/002_0.png" target="_blank"><img src="geneval/two_obj/base/002_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/002_1.png" target="_blank"><img src="geneval/two_obj/base/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/002_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/002_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/002_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/002_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a book and a laptop</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/003_0.png" target="_blank"><img src="geneval/two_obj/base/003_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/003_1.png" target="_blank"><img src="geneval/two_obj/base/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/003_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/003_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/003_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/003_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a fire hydrant and a tennis racket</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/004_0.png" target="_blank"><img src="geneval/two_obj/base/004_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/004_1.png" target="_blank"><img src="geneval/two_obj/base/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/004_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/004_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/004_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/004_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a parking meter and a teddy bear</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/005_0.png" target="_blank"><img src="geneval/two_obj/base/005_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/005_1.png" target="_blank"><img src="geneval/two_obj/base/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/005_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/005_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/005_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/005_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a horse and a giraffe</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/006_0.png" target="_blank"><img src="geneval/two_obj/base/006_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/006_1.png" target="_blank"><img src="geneval/two_obj/base/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/006_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/006_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/006_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/006_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a cow and a horse</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/007_0.png" target="_blank"><img src="geneval/two_obj/base/007_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/007_1.png" target="_blank"><img src="geneval/two_obj/base/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/007_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/007_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/007_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/007_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a traffic light and a backpack</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/008_0.png" target="_blank"><img src="geneval/two_obj/base/008_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/008_1.png" target="_blank"><img src="geneval/two_obj/base/008_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/008_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/008_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/008_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/008_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/008_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/008_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/008_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/008_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a frisbee and a cell phone</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/two_obj/base/009_0.png" target="_blank"><img src="geneval/two_obj/base/009_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/base/009_1.png" target="_blank"><img src="geneval/two_obj/base/009_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo/009_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo/009_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo/009_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo/009_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/two_obj/flow-grpo-no-kl/009_0.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/009_0.png" class="pair" loading="lazy"></a><a href="geneval/two_obj/flow-grpo-no-kl/009_1.png" target="_blank"><img src="geneval/two_obj/flow-grpo-no-kl/009_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a wine glass and a bear</td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div id="g1" class="gallery">
+<table class="gallery-table">
+<thead><tr><th>SD-3.5-m</th><th>Flow-GRPO</th><th>Flow-GRPO (w/o KL)</th></tr></thead>
+<tbody>
+  <tr>
+    <td><a href="geneval/bind/base/000_0.png" target="_blank"><img src="geneval/bind/base/000_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/000_1.png" target="_blank"><img src="geneval/bind/base/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/000_0.png" target="_blank"><img src="geneval/bind/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/000_1.png" target="_blank"><img src="geneval/bind/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/000_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/000_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a brown hot dog and a purple pizza</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/001_0.png" target="_blank"><img src="geneval/bind/base/001_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/001_1.png" target="_blank"><img src="geneval/bind/base/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/001_0.png" target="_blank"><img src="geneval/bind/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/001_1.png" target="_blank"><img src="geneval/bind/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/001_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/001_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a white banana and a black elephant</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/002_0.png" target="_blank"><img src="geneval/bind/base/002_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/002_1.png" target="_blank"><img src="geneval/bind/base/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/002_0.png" target="_blank"><img src="geneval/bind/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/002_1.png" target="_blank"><img src="geneval/bind/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/002_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/002_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a yellow stop sign and a blue potted plant</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/003_0.png" target="_blank"><img src="geneval/bind/base/003_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/003_1.png" target="_blank"><img src="geneval/bind/base/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/003_0.png" target="_blank"><img src="geneval/bind/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/003_1.png" target="_blank"><img src="geneval/bind/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/003_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/003_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a red orange and a purple broccoli</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/004_0.png" target="_blank"><img src="geneval/bind/base/004_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/004_1.png" target="_blank"><img src="geneval/bind/base/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/004_0.png" target="_blank"><img src="geneval/bind/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/004_1.png" target="_blank"><img src="geneval/bind/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/004_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/004_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a blue pizza and a yellow baseball glove</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/005_0.png" target="_blank"><img src="geneval/bind/base/005_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/005_1.png" target="_blank"><img src="geneval/bind/base/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/005_0.png" target="_blank"><img src="geneval/bind/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/005_1.png" target="_blank"><img src="geneval/bind/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/005_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/005_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a red giraffe and a black cell phone</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/006_0.png" target="_blank"><img src="geneval/bind/base/006_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/006_1.png" target="_blank"><img src="geneval/bind/base/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/006_0.png" target="_blank"><img src="geneval/bind/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/006_1.png" target="_blank"><img src="geneval/bind/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/006_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/006_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a purple wine glass and a black apple</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/bind/base/007_0.png" target="_blank"><img src="geneval/bind/base/007_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/base/007_1.png" target="_blank"><img src="geneval/bind/base/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo/007_0.png" target="_blank"><img src="geneval/bind/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo/007_1.png" target="_blank"><img src="geneval/bind/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/bind/flow-grpo-no-kl/007_0.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="geneval/bind/flow-grpo-no-kl/007_1.png" target="_blank"><img src="geneval/bind/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a red train and a purple bear</td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div id="g2" class="gallery">
+<table class="gallery-table">
+<thead><tr><th>SD-3.5-m</th><th>Flow-GRPO</th><th>Flow-GRPO (w/o KL)</th></tr></thead>
+<tbody>
+  <tr>
+    <td><a href="geneval/pos/base/000_0.png" target="_blank"><img src="geneval/pos/base/000_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/000_1.png" target="_blank"><img src="geneval/pos/base/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/000_0.png" target="_blank"><img src="geneval/pos/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/000_1.png" target="_blank"><img src="geneval/pos/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/000_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/000_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a cow left of a stop sign</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/001_0.png" target="_blank"><img src="geneval/pos/base/001_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/001_1.png" target="_blank"><img src="geneval/pos/base/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/001_0.png" target="_blank"><img src="geneval/pos/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/001_1.png" target="_blank"><img src="geneval/pos/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/001_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/001_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a tie above a sink</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/002_0.png" target="_blank"><img src="geneval/pos/base/002_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/002_1.png" target="_blank"><img src="geneval/pos/base/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/002_0.png" target="_blank"><img src="geneval/pos/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/002_1.png" target="_blank"><img src="geneval/pos/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/002_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/002_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a dog right of a teddy bear</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/003_0.png" target="_blank"><img src="geneval/pos/base/003_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/003_1.png" target="_blank"><img src="geneval/pos/base/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/003_0.png" target="_blank"><img src="geneval/pos/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/003_1.png" target="_blank"><img src="geneval/pos/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/003_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/003_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a cell phone left of a tennis racket</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/004_0.png" target="_blank"><img src="geneval/pos/base/004_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/004_1.png" target="_blank"><img src="geneval/pos/base/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/004_0.png" target="_blank"><img src="geneval/pos/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/004_1.png" target="_blank"><img src="geneval/pos/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/004_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/004_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a laptop left of a cow</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/005_0.png" target="_blank"><img src="geneval/pos/base/005_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/005_1.png" target="_blank"><img src="geneval/pos/base/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/005_0.png" target="_blank"><img src="geneval/pos/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/005_1.png" target="_blank"><img src="geneval/pos/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/005_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/005_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a bench left of a bear</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/006_0.png" target="_blank"><img src="geneval/pos/base/006_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/006_1.png" target="_blank"><img src="geneval/pos/base/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/006_0.png" target="_blank"><img src="geneval/pos/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/006_1.png" target="_blank"><img src="geneval/pos/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/006_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/006_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a hot dog left of a suitcase</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/007_0.png" target="_blank"><img src="geneval/pos/base/007_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/007_1.png" target="_blank"><img src="geneval/pos/base/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/007_0.png" target="_blank"><img src="geneval/pos/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/007_1.png" target="_blank"><img src="geneval/pos/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/007_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/007_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a pizza right of a banana</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/pos/base/008_0.png" target="_blank"><img src="geneval/pos/base/008_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/base/008_1.png" target="_blank"><img src="geneval/pos/base/008_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo/008_0.png" target="_blank"><img src="geneval/pos/flow-grpo/008_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo/008_1.png" target="_blank"><img src="geneval/pos/flow-grpo/008_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/pos/flow-grpo-no-kl/008_0.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/008_0.png" class="pair" loading="lazy"></a><a href="geneval/pos/flow-grpo-no-kl/008_1.png" target="_blank"><img src="geneval/pos/flow-grpo-no-kl/008_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of a zebra left of an elephant</td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div id="g3" class="gallery">
+<table class="gallery-table">
+<thead><tr><th>SD-3.5-m</th><th>Flow-GRPO</th><th>Flow-GRPO (w/o KL)</th></tr></thead>
+<tbody>
+  <tr>
+    <td><a href="geneval/counting/base/000_0.png" target="_blank"><img src="geneval/counting/base/000_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/000_1.png" target="_blank"><img src="geneval/counting/base/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/000_0.png" target="_blank"><img src="geneval/counting/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/000_1.png" target="_blank"><img src="geneval/counting/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/000_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/000_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of four sinks</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/001_0.png" target="_blank"><img src="geneval/counting/base/001_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/001_1.png" target="_blank"><img src="geneval/counting/base/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/001_0.png" target="_blank"><img src="geneval/counting/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/001_1.png" target="_blank"><img src="geneval/counting/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/001_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/001_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of three handbags</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/002_0.png" target="_blank"><img src="geneval/counting/base/002_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/002_1.png" target="_blank"><img src="geneval/counting/base/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/002_0.png" target="_blank"><img src="geneval/counting/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/002_1.png" target="_blank"><img src="geneval/counting/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/002_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/002_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of four boats</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/003_0.png" target="_blank"><img src="geneval/counting/base/003_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/003_1.png" target="_blank"><img src="geneval/counting/base/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/003_0.png" target="_blank"><img src="geneval/counting/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/003_1.png" target="_blank"><img src="geneval/counting/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/003_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/003_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of three buses</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/004_0.png" target="_blank"><img src="geneval/counting/base/004_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/004_1.png" target="_blank"><img src="geneval/counting/base/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/004_0.png" target="_blank"><img src="geneval/counting/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/004_1.png" target="_blank"><img src="geneval/counting/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/004_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/004_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of three giraffes</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/005_0.png" target="_blank"><img src="geneval/counting/base/005_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/005_1.png" target="_blank"><img src="geneval/counting/base/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/005_0.png" target="_blank"><img src="geneval/counting/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/005_1.png" target="_blank"><img src="geneval/counting/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/005_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/005_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of three kites</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/006_0.png" target="_blank"><img src="geneval/counting/base/006_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/006_1.png" target="_blank"><img src="geneval/counting/base/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/006_0.png" target="_blank"><img src="geneval/counting/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/006_1.png" target="_blank"><img src="geneval/counting/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/006_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/006_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of three fire hydrants</td>
+  </tr>
+  <tr>
+    <td><a href="geneval/counting/base/007_0.png" target="_blank"><img src="geneval/counting/base/007_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/base/007_1.png" target="_blank"><img src="geneval/counting/base/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo/007_0.png" target="_blank"><img src="geneval/counting/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo/007_1.png" target="_blank"><img src="geneval/counting/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+    <td><a href="geneval/counting/flow-grpo-no-kl/007_0.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="geneval/counting/flow-grpo-no-kl/007_1.png" target="_blank"><img src="geneval/counting/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+  </tr>
+  <tr>
+    <td class="prompt" colspan="3"><strong>Prompt&nbsp;:</strong> a photo of four broccolis</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="topbtn" title="Back to top">↑</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab=>{
+  tab.onclick = ()=>{
+    // visual state
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    // gallery switch
+    const tgt = tab.dataset.target;
+    document.querySelectorAll('.gallery').forEach(g=>{
+      g.classList.toggle('active', g.id === tgt);
+    });
+  };
+});
+document.querySelector('.topbtn').onclick = () =>
+  window.scrollTo({top:0,behavior:'smooth'});
+</script>
+
+</body></html>

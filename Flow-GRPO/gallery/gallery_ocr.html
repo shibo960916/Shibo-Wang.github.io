@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>Multi-group Comparison on GenEval</title>
+<style>
+ body{background:#000;color:#eee;font-family:Arial,Helvetica,sans-serif;margin:0;padding:40px;}
+ h1{font-size:30px;margin:40px 0 20px;text-align:center;}
+ /* pill tabs */
+ .tabbar{font-size:20px;display:flex;gap:40px;justify-content:center;margin-top:100px;margin-bottom:50px;flex-wrap:wrap;}
+ .tab{padding:12px 22px;border-radius:12px;background:#fff;color:#000;font-weight:600;
+      cursor:pointer;user-select:none;transition:background .25s;}
+ .tab.active{background:#9fffd6;}
+ /* galleries */
+ .gallery{display:none;}
+ .gallery.active{display:block;}
+ table.gallery-table{width:100%;border-collapse:separate;border-spacing:0 30px;}
+ th{font-size:28px;padding:8px 6px;}
+ td{text-align:center;vertical-align:top;}
+ img.pair{
+  height:180px;          /*  adjust once, works everywhere   */
+  width:auto;            /*  keeps aspect ratio              */
+  max-width:100%;        /*  prevents stretching on phones   */
+  margin:0 6px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:opacity .3s;
+}
+
+ img.pair:hover{opacity:.8;}
+ .prompt { font-size: 20px; color: #bbb; padding-top: 6px; max-width: 60%; text-align: center; margin: 0 auto;}
+ /* back-to-top */
+ .topbtn{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;
+         background:#4caf50;color:#fff;display:flex;align-items:center;justify-content:center;
+         font-size:24px;cursor:pointer;box-shadow:0 0 12px rgba(0,0,0,.6);}
+</style>
+</head>
+<body>
+<table>
+  <thead><tr>
+<h1>Comparisons of OCR Task</h1>
+    <th>SD-3.5-m</th>    <th>Flow-GRPO</th>    <th>Flow-GRPO (w/o KL)</th>  </tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="ocr/base/000_0.png" target="_blank"><img src="ocr/base/000_0.png" class="pair" loading="lazy"></a><a href="ocr/base/000_1.png" target="_blank"><img src="ocr/base/000_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/000_0.png" target="_blank"><img src="ocr/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/000_1.png" target="_blank"><img src="ocr/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/000_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/000_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A close-up of a sleek smartwatch on a wrist, the screen displaying &quot;Step Goal Achieved&quot; with a celebratory animation, set against a blurred cityscape at dusk, capturing the moment of accomplishment.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/001_0.png" target="_blank"><img src="ocr/base/001_0.png" class="pair" loading="lazy"></a><a href="ocr/base/001_1.png" target="_blank"><img src="ocr/base/001_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/001_0.png" target="_blank"><img src="ocr/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/001_1.png" target="_blank"><img src="ocr/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/001_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/001_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A weathered cave explorer&#x27;s journal page, with the phrase &quot;Lost City Near&quot; prominently written in faded ink, surrounded by sketches of ancient ruins and cryptic symbols, under a dim, mystical light.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/002_0.png" target="_blank"><img src="ocr/base/002_0.png" class="pair" loading="lazy"></a><a href="ocr/base/002_1.png" target="_blank"><img src="ocr/base/002_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/002_0.png" target="_blank"><img src="ocr/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/002_1.png" target="_blank"><img src="ocr/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/002_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/002_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A bustling city street at night, illuminated by neon lights, featuring a retro-futuristic robot comedy club with a vibrant marquee that reads &quot;Tonight Binary StandUp&quot;. Robots in casual attire gather outside, laughing and chatting, creating a lively atmosphere.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/003_0.png" target="_blank"><img src="ocr/base/003_0.png" class="pair" loading="lazy"></a><a href="ocr/base/003_1.png" target="_blank"><img src="ocr/base/003_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/003_0.png" target="_blank"><img src="ocr/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/003_1.png" target="_blank"><img src="ocr/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/003_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/003_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A hiking trail with a wooden signpost clearly displaying &quot;Private Property No Entry&quot;, surrounded by dense, green foliage and a winding dirt path leading into the forest.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/004_0.png" target="_blank"><img src="ocr/base/004_0.png" class="pair" loading="lazy"></a><a href="ocr/base/004_1.png" target="_blank"><img src="ocr/base/004_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/004_0.png" target="_blank"><img src="ocr/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/004_1.png" target="_blank"><img src="ocr/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/004_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/004_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A realistic photo of a tech campus courtyard at night, featuring a glowing &quot;AI Training Zone&quot; hologram floating in the center, surrounded by futuristic buildings and greenery, with soft ambient lighting enhancing the futuristic atmosphere.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/005_0.png" target="_blank"><img src="ocr/base/005_0.png" class="pair" loading="lazy"></a><a href="ocr/base/005_1.png" target="_blank"><img src="ocr/base/005_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/005_0.png" target="_blank"><img src="ocr/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/005_1.png" target="_blank"><img src="ocr/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/005_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/005_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A vibrant urban alley with a graffiti wall prominently spray-painted &quot;Street Art Rules&quot;, surrounded by colorful tags and murals, under a sunny sky.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/006_0.png" target="_blank"><img src="ocr/base/006_0.png" class="pair" loading="lazy"></a><a href="ocr/base/006_1.png" target="_blank"><img src="ocr/base/006_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/006_0.png" target="_blank"><img src="ocr/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/006_1.png" target="_blank"><img src="ocr/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/006_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/006_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> An antique typewriter with a sheet of paper inserted, prominently displaying the typed words: &quot;Chapter 1 It Was a Dark Night&quot;. The scene is set in a dimly lit, vintage study with a single desk lamp casting a warm glow over the typewriter.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/007_0.png" target="_blank"><img src="ocr/base/007_0.png" class="pair" loading="lazy"></a><a href="ocr/base/007_1.png" target="_blank"><img src="ocr/base/007_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/007_0.png" target="_blank"><img src="ocr/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/007_1.png" target="_blank"><img src="ocr/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/007_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/007_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A detailed inventory list of a dragon&#x27;s hoard, prominently displaying &quot;Gold Yes&quot; among a pile of shimmering treasures, ancient coins, and valuable artifacts, set in a vast, mystical cave with a majestic dragon guarding the wealth.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/008_0.png" target="_blank"><img src="ocr/base/008_0.png" class="pair" loading="lazy"></a><a href="ocr/base/008_1.png" target="_blank"><img src="ocr/base/008_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/008_0.png" target="_blank"><img src="ocr/flow-grpo/008_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/008_1.png" target="_blank"><img src="ocr/flow-grpo/008_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/008_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/008_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/008_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/008_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A neon museum sign in a retro style, glowing brightly with the words &quot;Welcome to Vegas&quot;, set against a dark urban night scene with a hint of desert landscape in the background.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/009_0.png" target="_blank"><img src="ocr/base/009_0.png" class="pair" loading="lazy"></a><a href="ocr/base/009_1.png" target="_blank"><img src="ocr/base/009_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/009_0.png" target="_blank"><img src="ocr/flow-grpo/009_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/009_1.png" target="_blank"><img src="ocr/flow-grpo/009_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/009_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/009_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/009_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/009_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A camping mug labeled &quot;Campfire Brew&quot; sits on a rugged, wooden log beside a crackling campfire, surrounded by the serene, twilight forest. Steam rises gently from the mug, blending with the cool evening air.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/010_0.png" target="_blank"><img src="ocr/base/010_0.png" class="pair" loading="lazy"></a><a href="ocr/base/010_1.png" target="_blank"><img src="ocr/base/010_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/010_0.png" target="_blank"><img src="ocr/flow-grpo/010_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/010_1.png" target="_blank"><img src="ocr/flow-grpo/010_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/010_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/010_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/010_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/010_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A vintage suitcase adorned with a colorful sticker collection, prominently featuring a worn, antique sticker that reads &quot;Lost in Atlantis 1923&quot;, surrounded by other nostalgic travel stickers from the early 20th century.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/011_0.png" target="_blank"><img src="ocr/base/011_0.png" class="pair" loading="lazy"></a><a href="ocr/base/011_1.png" target="_blank"><img src="ocr/base/011_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/011_0.png" target="_blank"><img src="ocr/flow-grpo/011_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/011_1.png" target="_blank"><img src="ocr/flow-grpo/011_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/011_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/011_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/011_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/011_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A majestic pirate ship sails the open sea, its large sail prominently embroidered with &quot;Queen Anne&#x27;s Revenge&quot;. The ship cuts through choppy waters, with the wind billowing the detailed sail. Dark clouds loom overhead, adding to the dramatic, adventurous scene.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/012_0.png" target="_blank"><img src="ocr/base/012_0.png" class="pair" loading="lazy"></a><a href="ocr/base/012_1.png" target="_blank"><img src="ocr/base/012_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/012_0.png" target="_blank"><img src="ocr/flow-grpo/012_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/012_1.png" target="_blank"><img src="ocr/flow-grpo/012_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/012_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/012_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/012_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/012_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A realistic photograph of a worn road sign near a rugged cliff, reading &quot;Danger Edge Unstable&quot;, with the vast, misty landscape stretching beyond.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/013_0.png" target="_blank"><img src="ocr/base/013_0.png" class="pair" loading="lazy"></a><a href="ocr/base/013_1.png" target="_blank"><img src="ocr/base/013_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/013_0.png" target="_blank"><img src="ocr/flow-grpo/013_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/013_1.png" target="_blank"><img src="ocr/flow-grpo/013_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/013_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/013_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/013_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/013_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Wanted poster with a rugged, old parchment texture, offering a substantial reward for the capture of the &quot;Bandit Who Stole the D&quot;. The poster is tattered, with a faded sketch of the bandit, and is pinned to a wooden board in a bustling, dusty frontier town.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/014_0.png" target="_blank"><img src="ocr/base/014_0.png" class="pair" loading="lazy"></a><a href="ocr/base/014_1.png" target="_blank"><img src="ocr/base/014_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/014_0.png" target="_blank"><img src="ocr/flow-grpo/014_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/014_1.png" target="_blank"><img src="ocr/flow-grpo/014_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/014_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/014_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/014_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/014_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A vintage radio with a worn wooden casing, the dial glowing softly and labeled &quot;Tune to Adventure&quot;, set against a backdrop of an old, cozy living room with a fireplace and a bookshelf.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/015_0.png" target="_blank"><img src="ocr/base/015_0.png" class="pair" loading="lazy"></a><a href="ocr/base/015_1.png" target="_blank"><img src="ocr/base/015_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/015_0.png" target="_blank"><img src="ocr/flow-grpo/015_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/015_1.png" target="_blank"><img src="ocr/flow-grpo/015_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/015_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/015_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/015_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/015_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A realistic photograph of a closed laboratory door, with a prominent warning sign that reads &quot;Biohazard Inside&quot;, surrounded by a sterile, white-walled hallway with dim lighting and a slightly shadowy atmosphere.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/016_0.png" target="_blank"><img src="ocr/base/016_0.png" class="pair" loading="lazy"></a><a href="ocr/base/016_1.png" target="_blank"><img src="ocr/base/016_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/016_0.png" target="_blank"><img src="ocr/flow-grpo/016_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/016_1.png" target="_blank"><img src="ocr/flow-grpo/016_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/016_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/016_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/016_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/016_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A vibrant skateboard deck featuring the bold graphic &quot;SKATE OR DIE 4EVER&quot; in dynamic, graffiti-style lettering, set against a gradient background that shifts from deep blue at the nose to bright orange at the tail, with subtle scratch marks and wear to give it a well-used, authentic look.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/017_0.png" target="_blank"><img src="ocr/base/017_0.png" class="pair" loading="lazy"></a><a href="ocr/base/017_1.png" target="_blank"><img src="ocr/base/017_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/017_0.png" target="_blank"><img src="ocr/flow-grpo/017_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/017_1.png" target="_blank"><img src="ocr/flow-grpo/017_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/017_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/017_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/017_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/017_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A baker in a cozy, rustic kitchen, wearing an apron embroidered with &quot;Bread Wizard&quot; in delicate, flour-dusted thread, surrounded by freshly baked bread and baking tools.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/018_0.png" target="_blank"><img src="ocr/base/018_0.png" class="pair" loading="lazy"></a><a href="ocr/base/018_1.png" target="_blank"><img src="ocr/base/018_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/018_0.png" target="_blank"><img src="ocr/flow-grpo/018_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/018_1.png" target="_blank"><img src="ocr/flow-grpo/018_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/018_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/018_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/018_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/018_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A wizard stands in a dimly lit ancient chamber, holding a staff with intricate engravings. The staff glows faintly, and the words &quot;This End Towards Enemies&quot; are clearly visible. The wizard&#x27;s eyes are closed, concentrating, as magical energy swirls around the staff.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/019_0.png" target="_blank"><img src="ocr/base/019_0.png" class="pair" loading="lazy"></a><a href="ocr/base/019_1.png" target="_blank"><img src="ocr/base/019_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/019_0.png" target="_blank"><img src="ocr/flow-grpo/019_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/019_1.png" target="_blank"><img src="ocr/flow-grpo/019_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/019_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/019_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/019_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/019_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> &quot;Exquisite&quot; written in modern calligraphy, with elegant, flowing strokes on a minimalist white background, showcasing the beauty and precision of the script.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/020_0.png" target="_blank"><img src="ocr/base/020_0.png" class="pair" loading="lazy"></a><a href="ocr/base/020_1.png" target="_blank"><img src="ocr/base/020_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/020_0.png" target="_blank"><img src="ocr/flow-grpo/020_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/020_1.png" target="_blank"><img src="ocr/flow-grpo/020_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/020_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/020_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/020_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/020_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A vibrant candy wrapper design featuring &quot;Choco Crunch&quot;, with a playful, colorful background and the brand name prominently displayed in bold, eye-catching letters. The wrapper includes illustrations of chocolate chunks and crunchy elements, enhancing the product&#x27;s appeal.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/021_0.png" target="_blank"><img src="ocr/base/021_0.png" class="pair" loading="lazy"></a><a href="ocr/base/021_1.png" target="_blank"><img src="ocr/base/021_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/021_0.png" target="_blank"><img src="ocr/flow-grpo/021_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/021_1.png" target="_blank"><img src="ocr/flow-grpo/021_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/021_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/021_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/021_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/021_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A bustling street with a charming storefront prominently displaying &quot;World&#x27;s Best Deli&quot; in elegant lettering, centered in the frame, surrounded by vibrant window displays and happy customers.</div></td>
+    </tr>
+    <tr>
+      <td><a href="ocr/base/022_0.png" target="_blank"><img src="ocr/base/022_0.png" class="pair" loading="lazy"></a><a href="ocr/base/022_1.png" target="_blank"><img src="ocr/base/022_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo/022_0.png" target="_blank"><img src="ocr/flow-grpo/022_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo/022_1.png" target="_blank"><img src="ocr/flow-grpo/022_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="ocr/flow-grpo-no-kl/022_0.png" target="_blank"><img src="ocr/flow-grpo-no-kl/022_0.png" class="pair" loading="lazy"></a><a href="ocr/flow-grpo-no-kl/022_1.png" target="_blank"><img src="ocr/flow-grpo-no-kl/022_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A rustic scarecrow stands in a golden wheat field, its worn shirt painted with bold black letters: &quot;No Crows Allowed&quot;. The sun sets behind, casting long shadows and a warm glow over the scene, emphasizing the scarecrow&#x27;s vigilant stance.</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="back-to-top" title="Back to top">↑</div>
+<script>
+document.querySelector('.back-to-top').onclick = () =>
+    window.scrollTo({top: 0, behavior: 'smooth'});
+</script>
+</body>
+</html>

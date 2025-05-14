@@ -1,0 +1,14 @@
+step-000000 | a photo of a potted plant and a boat
+step-000000 | a photo of a fire hydrant and a tennis racket
+step-000000 | a photo of a chair and a laptop
+step-000000 | a photo of four boats
+step-000000 | a photo of three giraffes
+step-000000 | a photo of three sinks
+step-000000 | a photo of a yellow broccoli
+step-000000 | a photo of a cow left of a stop sign
+step-000000 | a photo of a pizza below a computer keyboard
+step-000000 | a photo of a bench left of a bear
+step-000000 | a photo of a pizza right of a banana
+step-000000 | a photo of a black kite and a green bear
+step-000000 | a photo of a blue pizza and a yellow baseball glove
+step-000000 | a photo of a purple wine glass and a black apple

@@ -1,0 +1,40 @@
+ours_4436-kl/a photo of a tennis racket and a bicycle_000000.png
+ours_4436-kl/a photo of a tennis racket and a bicycle_000002.png
+sd3.5-m/a photo of a tennis racket and a bicycle_000000.png
+sd3.5-m/a photo of a tennis racket and a bicycle_000002.png
+ours_4436-kl/a photo of a carrot and a couch_000000.png
+ours_4436-kl/a photo of a carrot and a couch_000002.png
+sd3.5-m/a photo of a carrot and a couch_000000.png
+sd3.5-m/a photo of a carrot and a couch_000002.png
+ours_4436-kl/a photo of a book and a laptop_000000.png
+ours_4436-kl/a photo of a book and a laptop_000002.png
+sd3.5-m/a photo of a book and a laptop_000000.png
+sd3.5-m/a photo of a book and a laptop_000002.png
+ours_4436-kl/a photo of a fire hydrant and a tennis racket_000001.png
+ours_4436-kl/a photo of a fire hydrant and a tennis racket_000002.png
+sd3.5-m/a photo of a fire hydrant and a tennis racket_000001.png
+sd3.5-m/a photo of a fire hydrant and a tennis racket_000002.png
+ours_4436-kl/a photo of a parking meter and a teddy bear_000000.png
+ours_4436-kl/a photo of a parking meter and a teddy bear_000001.png
+sd3.5-m/a photo of a parking meter and a teddy bear_000000.png
+sd3.5-m/a photo of a parking meter and a teddy bear_000002.png
+ours_4436-kl/a photo of a horse and a giraffe_000000.png
+ours_4436-kl/a photo of a horse and a giraffe_000001.png
+sd3.5-m/a photo of a horse and a giraffe_000000.png
+sd3.5-m/a photo of a horse and a giraffe_000001.png
+ours_4436-kl/a photo of a cow and a horse_000000.png
+ours_4436-kl/a photo of a cow and a horse_000001.png
+sd3.5-m/a photo of a cow and a horse_000000.png
+sd3.5-m/a photo of a cow and a horse_000001.png
+ours_4436-kl/a photo of a traffic light and a backpack_000000.png
+ours_4436-kl/a photo of a traffic light and a backpack_000002.png
+sd3.5-m/a photo of a traffic light and a backpack_000000.png
+sd3.5-m/a photo of a traffic light and a backpack_000002.png
+ours_4436-kl/a photo of a frisbee and a cell phone_000000.png
+ours_4436-kl/a photo of a frisbee and a cell phone_000002.png
+sd3.5-m/a photo of a frisbee and a cell phone_000000.png
+sd3.5-m/a photo of a frisbee and a cell phone_000002.png
+ours_4436-kl/a photo of a wine glass and a bear_000000.png
+ours_4436-kl/a photo of a wine glass and a bear_000002.png
+sd3.5-m/a photo of a wine glass and a bear_000000.png
+sd3.5-m/a photo of a wine glass and a bear_000002.png

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>Multi-group Comparison on GenEval</title>
+<style>
+ body{background:#000;color:#eee;font-family:Arial,Helvetica,sans-serif;margin:0;padding:40px;}
+ h1{font-size:30px;margin:40px 0 20px;text-align:center;}
+ /* pill tabs */
+ .tabbar{font-size:20px;display:flex;gap:40px;justify-content:center;margin-top:100px;margin-bottom:50px;flex-wrap:wrap;}
+ .tab{padding:12px 22px;border-radius:12px;background:#fff;color:#000;font-weight:600;
+      cursor:pointer;user-select:none;transition:background .25s;}
+ .tab.active{background:#9fffd6;}
+ /* galleries */
+ .gallery{display:none;}
+ .gallery.active{display:block;}
+ table.gallery-table{width:100%;border-collapse:separate;border-spacing:0 30px;}
+ th{font-size:28px;padding:8px 6px;}
+ td{text-align:center;vertical-align:top;}
+ img.pair{
+  height:180px;          /*  adjust once, works everywhere   */
+  width:auto;            /*  keeps aspect ratio              */
+  max-width:100%;        /*  prevents stretching on phones   */
+  margin:0 6px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:opacity .3s;
+}
+
+ img.pair:hover{opacity:.8;}
+ .prompt { font-size: 20px; color: #bbb; padding-top: 6px; max-width: 60%; text-align: center; margin: 0 auto;}
+ /* back-to-top */
+ .topbtn{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;
+         background:#4caf50;color:#fff;display:flex;align-items:center;justify-content:center;
+         font-size:24px;cursor:pointer;box-shadow:0 0 12px rgba(0,0,0,.6);}
+</style>
+</head>
+<body>
+<table>
+  <thead><tr>
+<h1>Comparisons of PickScore Task</h1>
+    <th>SD-3.5-m</th>    <th>Flow-GRPO</th>    <th>Flow-GRPO (w/o KL)</th>  </tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="pickscore/base/000_0.png" target="_blank"><img src="pickscore/base/000_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/000_1.png" target="_blank"><img src="pickscore/base/000_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/000_0.png" target="_blank"><img src="pickscore/flow-grpo/000_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/000_1.png" target="_blank"><img src="pickscore/flow-grpo/000_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/000_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/000_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/000_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/000_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> enigmatic black square building on top of a purple hill, smoke stacks</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/001_0.png" target="_blank"><img src="pickscore/base/001_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/001_1.png" target="_blank"><img src="pickscore/base/001_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/001_0.png" target="_blank"><img src="pickscore/flow-grpo/001_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/001_1.png" target="_blank"><img src="pickscore/flow-grpo/001_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/001_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/001_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/001_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/001_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Labrador in anime style, black and white photography, highly detailed,</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/002_0.png" target="_blank"><img src="pickscore/base/002_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/002_1.png" target="_blank"><img src="pickscore/base/002_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/002_0.png" target="_blank"><img src="pickscore/flow-grpo/002_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/002_1.png" target="_blank"><img src="pickscore/flow-grpo/002_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/002_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/002_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/002_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/002_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A digital illustration of a dragon flying over a castle, fantasy style</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/003_0.png" target="_blank"><img src="pickscore/base/003_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/003_1.png" target="_blank"><img src="pickscore/base/003_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/003_0.png" target="_blank"><img src="pickscore/flow-grpo/003_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/003_1.png" target="_blank"><img src="pickscore/flow-grpo/003_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/003_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/003_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/003_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/003_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Lunch in Bavaria - oil painting</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/004_0.png" target="_blank"><img src="pickscore/base/004_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/004_1.png" target="_blank"><img src="pickscore/base/004_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/004_0.png" target="_blank"><img src="pickscore/flow-grpo/004_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/004_1.png" target="_blank"><img src="pickscore/flow-grpo/004_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/004_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/004_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/004_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/004_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> camera, 8k, 4k, high detailed, realistic photo of a pale german young woman, black hair, bossy, standing on a street</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/005_0.png" target="_blank"><img src="pickscore/base/005_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/005_1.png" target="_blank"><img src="pickscore/base/005_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/005_0.png" target="_blank"><img src="pickscore/flow-grpo/005_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/005_1.png" target="_blank"><img src="pickscore/flow-grpo/005_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/005_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/005_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/005_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/005_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Young man with an orange beard, cartoon style</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/006_0.png" target="_blank"><img src="pickscore/base/006_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/006_1.png" target="_blank"><img src="pickscore/base/006_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/006_0.png" target="_blank"><img src="pickscore/flow-grpo/006_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/006_1.png" target="_blank"><img src="pickscore/flow-grpo/006_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/006_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/006_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/006_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/006_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Watercolor painting of woodpecker, afternoon backlight, by greg rutkowski, by anders zorn</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/007_0.png" target="_blank"><img src="pickscore/base/007_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/007_1.png" target="_blank"><img src="pickscore/base/007_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/007_0.png" target="_blank"><img src="pickscore/flow-grpo/007_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/007_1.png" target="_blank"><img src="pickscore/flow-grpo/007_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/007_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/007_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/007_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/007_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Abraham Lincoln gives an outdoor speech to large crowd</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/008_0.png" target="_blank"><img src="pickscore/base/008_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/008_1.png" target="_blank"><img src="pickscore/base/008_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/008_0.png" target="_blank"><img src="pickscore/flow-grpo/008_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/008_1.png" target="_blank"><img src="pickscore/flow-grpo/008_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/008_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/008_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/008_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/008_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A pencil illustration of a fanged grim reaper</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/009_0.png" target="_blank"><img src="pickscore/base/009_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/009_1.png" target="_blank"><img src="pickscore/base/009_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/009_0.png" target="_blank"><img src="pickscore/flow-grpo/009_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/009_1.png" target="_blank"><img src="pickscore/flow-grpo/009_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/009_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/009_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/009_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/009_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> the word &quot;ALL&quot; , text in graffiti style, t shirt design, esports style, detailed</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/010_0.png" target="_blank"><img src="pickscore/base/010_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/010_1.png" target="_blank"><img src="pickscore/base/010_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/010_0.png" target="_blank"><img src="pickscore/flow-grpo/010_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/010_1.png" target="_blank"><img src="pickscore/flow-grpo/010_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/010_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/010_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/010_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/010_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Still life, tullips in the vase, close up shot, high details, 32k, by Peder Monsted, Jeremy Mann, Daniel F Gerhartz, Aaron Grffin ultra detailed</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/011_0.png" target="_blank"><img src="pickscore/base/011_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/011_1.png" target="_blank"><img src="pickscore/base/011_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/011_0.png" target="_blank"><img src="pickscore/flow-grpo/011_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/011_1.png" target="_blank"><img src="pickscore/flow-grpo/011_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/011_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/011_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/011_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/011_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> , fantasy, pastel, absurdist, photo, Wes anderson, pineapple character</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/012_0.png" target="_blank"><img src="pickscore/base/012_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/012_1.png" target="_blank"><img src="pickscore/base/012_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/012_0.png" target="_blank"><img src="pickscore/flow-grpo/012_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/012_1.png" target="_blank"><img src="pickscore/flow-grpo/012_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/012_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/012_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/012_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/012_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A masterful artistic digital rendering of a glass of dark red wine by Simon Prades, Huang Guangjian, Russ mills, Shaun Ryken, celestial, UHD, 8k resolution, post-apocalyptic editorial art, The Last of Us, complex and hyperdetailed, beautiful composition, a modern surrealistic masterpiece by Dan Mumford</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/013_0.png" target="_blank"><img src="pickscore/base/013_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/013_1.png" target="_blank"><img src="pickscore/base/013_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/013_0.png" target="_blank"><img src="pickscore/flow-grpo/013_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/013_1.png" target="_blank"><img src="pickscore/flow-grpo/013_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/013_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/013_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/013_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/013_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> a girl rides on a swing</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/014_0.png" target="_blank"><img src="pickscore/base/014_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/014_1.png" target="_blank"><img src="pickscore/base/014_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/014_0.png" target="_blank"><img src="pickscore/flow-grpo/014_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/014_1.png" target="_blank"><img src="pickscore/flow-grpo/014_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/014_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/014_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/014_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/014_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> highly realistic render of sonic at the beach relaxing</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/015_0.png" target="_blank"><img src="pickscore/base/015_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/015_1.png" target="_blank"><img src="pickscore/base/015_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/015_0.png" target="_blank"><img src="pickscore/flow-grpo/015_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/015_1.png" target="_blank"><img src="pickscore/flow-grpo/015_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/015_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/015_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/015_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/015_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> BEautiful landscape in thr style of Stusomu Nihei</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/016_0.png" target="_blank"><img src="pickscore/base/016_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/016_1.png" target="_blank"><img src="pickscore/base/016_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/016_0.png" target="_blank"><img src="pickscore/flow-grpo/016_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/016_1.png" target="_blank"><img src="pickscore/flow-grpo/016_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/016_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/016_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/016_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/016_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A photorealistic tiny dragon taking a bath in a teacup, coherent, intricate</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/017_0.png" target="_blank"><img src="pickscore/base/017_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/017_1.png" target="_blank"><img src="pickscore/base/017_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/017_0.png" target="_blank"><img src="pickscore/flow-grpo/017_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/017_1.png" target="_blank"><img src="pickscore/flow-grpo/017_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/017_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/017_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/017_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/017_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Anthropomorphic Cats playing dodgeball, by dan mumford and Banksy</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/018_0.png" target="_blank"><img src="pickscore/base/018_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/018_1.png" target="_blank"><img src="pickscore/base/018_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/018_0.png" target="_blank"><img src="pickscore/flow-grpo/018_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/018_1.png" target="_blank"><img src="pickscore/flow-grpo/018_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/018_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/018_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/018_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/018_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> quick doodle of a guy, medium hair with long bangs, hd detailed detailed</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/019_0.png" target="_blank"><img src="pickscore/base/019_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/019_1.png" target="_blank"><img src="pickscore/base/019_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/019_0.png" target="_blank"><img src="pickscore/flow-grpo/019_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/019_1.png" target="_blank"><img src="pickscore/flow-grpo/019_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/019_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/019_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/019_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/019_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> woman standing on an alleyway holding her luggage, long shot, wide shot, highly detailed, intricate, professional photography, RAW color perfect photo, night shot, bokeh, sharp focus, taken with eos 5d, UHD 8k</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/020_0.png" target="_blank"><img src="pickscore/base/020_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/020_1.png" target="_blank"><img src="pickscore/base/020_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/020_0.png" target="_blank"><img src="pickscore/flow-grpo/020_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/020_1.png" target="_blank"><img src="pickscore/flow-grpo/020_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/020_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/020_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/020_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/020_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Tiny cute isometric prompt to a robot emoji, soft smooth lighting, with soft pastel colors, 3d icon clay render, 100mm lens, 3d blender render, trending on polycount, modular constructivism,  background, physically based rendering, centered</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/021_0.png" target="_blank"><img src="pickscore/base/021_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/021_1.png" target="_blank"><img src="pickscore/base/021_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/021_0.png" target="_blank"><img src="pickscore/flow-grpo/021_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/021_1.png" target="_blank"><img src="pickscore/flow-grpo/021_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/021_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/021_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/021_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/021_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A modern and minimalist logo for cafe, teacup icon</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/022_0.png" target="_blank"><img src="pickscore/base/022_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/022_1.png" target="_blank"><img src="pickscore/base/022_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/022_0.png" target="_blank"><img src="pickscore/flow-grpo/022_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/022_1.png" target="_blank"><img src="pickscore/flow-grpo/022_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/022_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/022_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/022_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/022_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> un perro negro con el pecho y el morro blanco más pequeño que un labrador</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/023_0.png" target="_blank"><img src="pickscore/base/023_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/023_1.png" target="_blank"><img src="pickscore/base/023_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/023_0.png" target="_blank"><img src="pickscore/flow-grpo/023_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/023_1.png" target="_blank"><img src="pickscore/flow-grpo/023_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/023_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/023_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/023_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/023_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> , fantasy, pastel, absurdist, photo, tiny teapot house matchbox</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/024_0.png" target="_blank"><img src="pickscore/base/024_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/024_1.png" target="_blank"><img src="pickscore/base/024_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/024_0.png" target="_blank"><img src="pickscore/flow-grpo/024_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/024_1.png" target="_blank"><img src="pickscore/flow-grpo/024_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/024_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/024_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/024_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/024_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Logo for a company called &quot;White Castle Hourglasses&quot;</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/025_0.png" target="_blank"><img src="pickscore/base/025_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/025_1.png" target="_blank"><img src="pickscore/base/025_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/025_0.png" target="_blank"><img src="pickscore/flow-grpo/025_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/025_1.png" target="_blank"><img src="pickscore/flow-grpo/025_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/025_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/025_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/025_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/025_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> orange with an eye, surreal oil painting</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/026_0.png" target="_blank"><img src="pickscore/base/026_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/026_1.png" target="_blank"><img src="pickscore/base/026_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/026_0.png" target="_blank"><img src="pickscore/flow-grpo/026_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/026_1.png" target="_blank"><img src="pickscore/flow-grpo/026_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/026_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/026_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/026_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/026_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> Step back in time with this stunning pixel art by a renowned retro artist! Reminiscent of classic NES, SNES, Sega Genesis, and Mega Drive games, this artwork features a nostalgic night scene of towering buildings, stars, and a yellow moon. The pixelated clouds add to the retro vibe. #pixelart #retrogaming #nes #snes #segagenesis #megadrive #nostalgia #nightscene #buildings #stars #moon #clouds</div></td>
+    </tr>
+    <tr>
+      <td><a href="pickscore/base/027_0.png" target="_blank"><img src="pickscore/base/027_0.png" class="pair" loading="lazy"></a><a href="pickscore/base/027_1.png" target="_blank"><img src="pickscore/base/027_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo/027_0.png" target="_blank"><img src="pickscore/flow-grpo/027_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo/027_1.png" target="_blank"><img src="pickscore/flow-grpo/027_1.png" class="pair" loading="lazy"></a></td>
+      <td><a href="pickscore/flow-grpo-no-kl/027_0.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/027_0.png" class="pair" loading="lazy"></a><a href="pickscore/flow-grpo-no-kl/027_1.png" target="_blank"><img src="pickscore/flow-grpo-no-kl/027_1.png" class="pair" loading="lazy"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="prompt"><strong>Prompt&nbsp;:</strong> A side view of a fox, with a flat design, Artwork of t-shirt graphic.</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="back-to-top" title="Back to top">↑</div>
+<script>
+document.querySelector('.back-to-top').onclick = () =>
+    window.scrollTo({top: 0, behavior: 'smooth'});
+</script>
+</body>
+</html>
