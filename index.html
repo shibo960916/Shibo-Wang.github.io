@@ -76,11 +76,10 @@
                   <name>Gongye Liu (刘功烨)</name>
                 </p>
                 <p>
-                  Incoming Ph.D. Student <br>
-                  <a href="https://hkust.edu.hk/" target="_blank">HKUST, Hong Kong</a>
+                  Ph.D. Student &nbsp;<a href="https://hkust.edu.hk/" target="_blank">@HKUST, Hong Kong</a>
                 </p>
                 <p align=left>
-                  E-mail: <span>gongyeliuu [AT] gmail.com</span>
+                  E-mail: <span>gongyeliuu@gmail.com</span>
                 </p>
                 <p align=left>
                     <a href="https://scholar.google.com/citations?user=AWngqwgAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a> &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
@@ -100,10 +99,13 @@
         <table class="tbl" style="padding:3px;">
             <tr><td valign="center">
                 <p>
-                Hi, I'm Gongye Liu, an incoming Ph.D. student at <a href="https://hkust.edu.hk//" target="_blank">The Hong Kong University of Science and Technology (HKUST)</a>, supervised by <a href="https://whluo.github.io/" target="_blank">Prof. Wenhan Luo</a>. My current research focus on <em>GenAI</em>. I'm particularly interested in diffusion/flow-matching generative models.
+                Hi, I'm Gongye Liu, a first-year Ph.D. student at <a href="https://hkust.edu.hk//" target="_blank">The Hong Kong University of Science and Technology (HKUST)</a>, supervised by <a href="https://whluo.github.io/" target="_blank">Prof. Wenhan Luo</a>.
                 </p>
                 <p>
                 Prior to that, I obtained my M.Sc degree(2022-2025) in Artificial Intelligence from <a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>, supervised by Professor <a href="https://scholar.google.com/citations?user=4gH3sxsAAAAJ&hl=en" target="_blank">Yujiu Yang</a>. I received my B.Eng degree(2018-2022) in <a href="https://www.buaa.edu.cn/" target="_blank">Beihang University</a>.
+                </p>
+                <p>
+                I am working on <em>Generative AI</em>, with a focus on diffusion/flow-matching models for images and videos. My interests include foundation models, controllable generation, and post-training techniques like RL.
                 </p>
             </td></tr>
         </table>
@@ -207,12 +209,12 @@
           </td>
 
           <td class="cell-md">
-          <span class="tag">Preprint</span>&nbsp;&nbsp;
+          <span class="tag">NeurIPS 2025</span>&nbsp;&nbsp;
           <papertitle>Flow-GRPO: Training Flow Matching Models via Online RL</papertitle><br>
           Jie Liu*, <a class="highlight-me">Gongye Liu*</a>, Jiajun Liang, Yangguang Li, Jiaheng Liu, Xintao Wang, Pengfei Wan, Di Zhang, Wanli Ouyang
           <br>
           <p></p>
-          <em>arXiv</em>, 2025
+          <em>NeurIPS</em>, 2025
           <br>
           <a href="https://arxiv.org/pdf/2505.05470" target="_blank">arXiv</a> 
                     &nbsp/&nbsp <a href="https://gongyeliu.github.io/Flow-GRPO/" target="_blank">Visualization</a> &nbsp/&nbsp <a href="https://github.com/yifan123/flow_grpo" target="_blank">Code</a>
@@ -240,12 +242,12 @@
           </td>
 
           <td class="cell-md">
-          <span class="tag">Preprint</span>&nbsp;&nbsp;
+          <span class="tag">NeurIPS 2025</span>&nbsp;&nbsp;
           <papertitle>Improving Video Generation with Human Feedback</papertitle><br>
           Jie Liu*, <a class="highlight-me">Gongye Liu*</a>, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang
           <br>
           <p></p>
-          <em>arXiv</em>, 2025
+          <em>NeurIPS</em>, 2025
           <br>
           <a href="https://arxiv.org/pdf/2501.13918" target="_blank">arXiv</a> 
                     &nbsp/&nbsp <a href="https://gongyeliu.github.io/videoalign/" target="_blank">Project Page</a> &nbsp/&nbsp <a href="https://github.com/KwaiVGI/VideoAlign" target="_blank">Code</a> &nbsp/&nbsp <a href="https://huggingface.co/datasets/KwaiVGI/VideoGen-RewardBench" target="_blank">Dataset</a>
@@ -486,10 +488,18 @@
       <table class="tbl"><tr><td style="padding:0">
         <br>
         <p style="text-align:right;font-size:small;">
-          Last updated: May 2025<br>
+          Last updated: <span id="last-update">May 2025</span><br>
           <span id="busuanzi_container_site_pv">#Views: <span id="busuanzi_value_site_pv"></span>, #Visitors:
-                    <span id="busuanzi_value_site_uv"></span></span> (2024/9/15~)
+            <span id="busuanzi_value_site_uv"></span></span> (2024/9/15~)
         </p>
+        
+        <script>
+          // 自动显示页面最后修改时间
+          const lastModified = new Date(document.lastModified);
+          const month = lastModified.toLocaleString('en-US', { month: 'short' });
+          const year = lastModified.getFullYear();
+          document.getElementById('last-update').textContent = `${month} ${year}`;
+        </script>
       </td></tr></table>
 
     </td></tr>
