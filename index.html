@@ -117,8 +117,8 @@
 
     <section id="publications">
       
-        <h2 class="section-title">Selected Publications</h2>
-        <p class="section-subtitle">Hover the item to see more. (* denotes equal contribution)</p>
+        <h2 class="section-title">Publications</h2>
+        <!-- <p class="section-subtitle">Hover the item to see more. (* denotes equal contribution)</p> -->
       <div class="filter-controls sticky-filters" id="pub-filters">
         <div class="filter-controls">
           <button class="filter-btn active" data-filter="representative">Representative</button>
@@ -474,7 +474,21 @@
           // 2. 给当前点击的气泡加上 active 状态
           this.classList.add('active');
 
-          document.getElementById('pub-filters').scrollIntoView({ behavior: 'smooth' });
+          // 2. 【核心修复】：破解 Sticky 坐标欺骗
+          const filterBar = document.getElementById('pub-filters');
+          // 魔法开始：瞬间将其变为普通元素，以此获取它在页面中真实的物理位置
+          filterBar.style.position = 'static'; 
+          
+          // 计算目标位置（减去导航栏 61px 和额外的 10px 呼吸空间）
+          const targetY = filterBar.getBoundingClientRect().top + window.scrollY - 61 - 10; 
+          
+          // 测量完毕后，瞬间恢复它的吸顶属性（肉眼不会察觉到它变过）
+          filterBar.style.position = ''; 
+
+          // 执行平滑滚动，现在它能像导弹一样精准定位了
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+          // document.getElementById('pub-filters').scrollIntoView({ behavior: 'smooth' });
           
           // 3. 获取要过滤的标签名称
           const filterValue = this.getAttribute('data-filter');
