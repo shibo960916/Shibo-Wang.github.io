@@ -1,3 +1,3 @@
-Code of the personal website page: https://gongyeliu.github.io
+Code for my personal website: https://wangshibo.github.io
 
-Forked from Jon Barron's public academic website: https://jonbarron.info/.
+This website is adapted from Gongye Liu's homepage template: https://gongyeliu.github.io, which is based on Jon Barron's academic website: https://jonbarron.info/.
